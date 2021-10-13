@@ -1,0 +1,19 @@
+.descricao{
+    padding: 2.5rem 2.5rem;
+    margin: 2.5rem;
+    border: 5.5px solid #9799A6;
+}
+
+.descricao__titulo{
+    font-size: 35px;
+}
+
+.descricao__texto{
+    font-size: 20px;
+}
+
+.descricao__equacao{
+    font-size: 20px;
+    text-align: center;
+}
+

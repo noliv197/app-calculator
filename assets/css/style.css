@@ -1,0 +1,15 @@
+.cabecalho {
+    align-items: center;
+    background-color: #E1D0D0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+.rodape{
+    background-color: #E1D0D0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+

@@ -1,0 +1,14 @@
+.banner{
+    position: relative;
+}
+.banner__imagem{
+    /* background: url('../../img/banner.jpg') center ; */
+    height: 250px;
+    width: 100%;
+}
+.banner__titulo{
+    position: absolute;
+    text-align: center;
+    left: 15%;
+    top: 30%;
+}

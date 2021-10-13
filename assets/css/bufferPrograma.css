@@ -1,0 +1,50 @@
+.programa{
+    display: flex;
+    flex-direction: column;
+    margin: 2.5rem;
+    
+}
+
+.input{
+    /* padding-right: 15rem; */
+}
+
+.programa__legenda{
+    font-size: 20px;
+    padding-left: 15rem;
+}
+
+.programa__valor{
+    display: block-inline;
+	margin: 0 0 15px;
+	padding: 10px 15px;
+	width: 300px;
+}
+
+.programa__input{
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0 2.5rem; */
+    padding-right: 15rem;
+}
+
+.programa__botao{
+    align-self: center;
+	background: #E1D0D0;
+	border: none;
+	border-radius: 5px;
+	color: #616266;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+    margin-top: 2rem;
+	padding: 15px 0;
+	transition: 1s all;
+    width: 35%;
+}
+
+.programa__resposta{
+    font-size: 25px;
+    padding-top: 2.5rem;
+    text-align: center;
+}
