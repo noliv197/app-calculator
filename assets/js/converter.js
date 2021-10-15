@@ -1,22 +1,52 @@
-class Buffer
+class converter
 {
 	static
 	main(args)
 	{
-		// user variables
-		var ph = parseFloat(document.getElementById("ph").value);
-		var pka = parseFloat(document.getElementById("pka").value);
-		var vol = parseFloat(document.getElementById("volume").value);
-		var proportion = Math.pow(10, ph - pka);
-		//solve linear equations s/a = proportion and s+a= vol
-		var a = vol / (proportion + 1);
-		var s = proportion * a;
-		//return "Add " + String.valueOf(a) + " of acid to "+ String.valueOf(s) + " of salt!";
-		
-		var respostaDiv = document.querySelector("#resposta")
-		respostaDiv.innerHTML = "Adicione " + new String(a).toString() + " de ácido para " + new String(s).toString() + " de sal";
+		/*
+		        //Unidade de volume
+		        final double ul_ml = 0.001;
+		        final double ml_ul = 1/ul_ml;
+		        final double l_ml = 1000;
+		        final double ml_l = 1/l_ml;
+		        //unidade de massa
+		        final double ug_mg = 0.001;
+		        final double mg_ug = 1/ug_mg;
+		        final double g_mg = 1000;
+		        final double mg_g = 1/g_mg;
+		        final double kg_g = 1000;
+		        final double g_kg = 1/kg_g;
+		        //unidade de materia
+		        final double umol_mmol = 0.001;
+		        final double mmol_umol = 1/umol_mmol;
+		        final double mol_mmol = 1000;
+		        final double mmol_mol = 1/g_mg;
+		        */
+		var map = new Map();
+		//Unidade de volume
+		map.set("ul_ml", 0.001);
+		map.set("ml_ul", 1 / map.get("ul_ml"));
+		map.set("l_ml", 1000.0);
+		map.set("ml_l", 1 / map.get("l_ml"));
+		//unidade de massa
+		map.set("ug_mg", 0.001);
+		map.set("mg_ug", 1 / map.get("ug_mg"));
+		map.set("g_mg", 1000.0);
+		map.set("mg_g", 1 / map.get("g_mg"));
+		map.set("kg_g", 1000.0);
+		map.set("g_kg", 1 / map.get("kg_g"));
+		//unidade de materia
+		map.set("umol_mmol", 0.001);
+		map.set("mmol_umol", 1 / map.get("umol_mmol"));
+		map.set("mol_mmol", 1000.0);
+		map.set("mmol_mol", 1 / map.get("g_mg"));
+		//wanted units
+		var in_unit = "ul";
+		var in_value = 10;
+		var out_unit = "ml";
+		var out_value = 0.0;
+		out_value = in_value * map.get(in_unit + "_" + out_unit);
+		console.log(out_value);
 	}
 }
-
-var button = document.querySelector("button");
-button.onclick = Buffer.main;
+converter.main([]);
