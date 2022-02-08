@@ -1,0 +1,19 @@
+@import url(_variaveis.css);
+@import url(_reset.css);
+@import url(_normalize.css);
+@import url(_componentes.css);
+
+.cabecalho {
+    align-items: center;
+    background-color: var(--rosa);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+.rodape{
+    background-color: var(--rosa);
+    padding: 20px 0;
+    text-align: center;
+}
+

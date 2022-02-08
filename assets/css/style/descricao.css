@@ -1,7 +1,7 @@
 .descricao{
     padding: 2.5rem 2.5rem;
     margin: 2.5rem;
-    border: 5.5px solid #9799A6;
+    border: 5.5px solid var(--cinza);
 }
 
 .descricao__titulo{

@@ -13,9 +13,9 @@
 }
 
 .menu-principal__lista___link {
-	border: 2.5px solid #616266;
+	border: 2.5px solid var(--cinza_escuro);
     border-radius: 5px;
-    color: black;
+    color: var(--preto);
 	display: block;
     font-size: 20px;
 	margin-bottom: 5px;
@@ -25,7 +25,7 @@
 }
 
 .menu-principal__lista___link:hover{
-    border-color: cadetblue;
+    border-color: var(--azul);
     text-decoration: underline;
     transform: scale(1.2);
 }
@@ -35,7 +35,7 @@
     justify-content: space-between;
     padding-top: 5px;
     padding-left: 5px;
-    background: #E1D0D0;
+    background: var(--rosa);
 }
 
 .menu__secundario{

@@ -7,7 +7,7 @@
 }
 .conteudo__caixas{
     box-sizing: border-box;
-	border: 5px solid cadetblue;
+	border: 5px solid var(--azul);
 	border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -46,7 +46,7 @@
 }
 
 .caixas__link{
-    border-bottom: 5.5px solid #9799A6;
+    border-bottom: 5.5px solid var(--cinza);
     box-sizing: border-box;
     color: black;
     font-size: 25px;
@@ -56,6 +56,6 @@
 }
 
 .caixas__link:hover{
-    border-color: cadetblue;
+    border-color: var(--cinza);
     font-size: 30px;
 }

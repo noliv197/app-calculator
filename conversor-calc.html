@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+
+    <link href="assets/css/base/base.css" rel="stylesheet">
+    <link href="assets/css/style/menu.css" rel="stylesheet">
+    <link href="assets/css/style/programa.css" rel="stylesheet">
+    <link href="assets/css/style/descricao.css" rel="stylesheet">
+    <link href="assets/css/mediaQuery/mediaQuery.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="cabecalho__secundario">
+        <div class="menu__principal">
+            <img class="logo" alt="logo calc" src="img/nome-logo.png">
+            <nav class="menu__principal___lista">
+                <ul class="menu__lista">
+                    <li class="menu__lista___item"><a class="menu-principal__lista___link" href="index.html">início</a></li>
+                    <li class="menu__lista___item"><a class="menu-principal__lista___link" href="conversor-calc.html">conversor</a></li>
+                    <li class="menu__lista___item"><a class="menu-principal__lista___link" href="buffer-calc.html">soluções</a></li>
+                    <li class="menu__lista___item"><a class="menu-principal__lista___link" href="#">outros</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="menu__secundario">
+            <nav class="menu__secundario__lista">
+                <ul class="menu__lista">
+                    <li class="menu__lista___item"><a class="menu-principal__lista___link" href="#">massa</a></li>
+                    <li class="menu__lista___item"><a class="menu-principal__lista___link" href="conversor-calc.html">volume</a></li>
+                    <li class="menu__lista___item"><a class="menu-principal__lista___link" href="#">matéria</a></li>
+                    <li class="menu__lista___item"><a class="menu-principal__lista___link" href="#">tempo</a></li>
+                    <li class="menu__lista___item"><a class="menu-principal__lista___link" href="#">temperatura</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+    <main>
+        <div class="descricao">
+            <h2 class="descricao__titulo">Conversão de Unidades</h2>
+            <p class="descricao__texto">
+                [Adicionar descrição]
+                <br>
+            </p>
+                
+            <p class="descricao__equacao">
+                <br>
+            </p>
+        </div>
+
+
+        <section class="programa__conversor ">
+            <div class="input__conversor container">
+                <h3>Volume</h3>
+                <fieldset class="programa__campo">
+                    <div  class="programa__input___conversor">
+                        <input id ="V1" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select class="programa_unit">
+						<option id="unit-1">Microlitro (μL)</option>
+						<option id="unit-1"> Mililitro (mL)</option>
+						<option id="unit-1">Litro (L)</option>
+					</select>
+				</fieldset>
+
+                <button class="botao__conversor"><img class="botao__icone" src="img/icone-seta.png"></button>
+
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                        <div id ="V2" class="programa__valor___conversor" type="number" ></div>
+                    </div>
+					<select class="programa_unit">
+						<option id="unit-2">Microlitro (μL)</option>
+						<option id="unit-2" selected>Mililitro (mL)</option>
+						<option id="unit-2">Litro (L)</option>
+					</select>
+				</fieldset>
+            </div>
+
+            <div class="input__conversor container">
+                <h3>Massa</h3>
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                    <input id ="M1" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select class="programa_unit">
+						<option id="unit-1">Micrograma (μg)</option>
+						<option id="unit-1"> Miligrama (mg)</option>
+						<option id="unit-1">Grama (g)</option>
+                        <option id="unit-1">Kilograma (kg)</option>
+					</select>
+				</fieldset>
+
+                <button class="botao__conversor"><img class="botao__icone" src="img/icone-seta.png"></button>
+               <!--  <div id="resposta" class="programa__resposta"></div> -->
+
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                        <input id ="M2" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select class="programa_unit">
+						<option id="unit-1">Micrograma (μg)</option>
+						<option id="unit-1"> Miligrama (mg)</option>
+						<option id="unit-1">Grama (g)</option>
+                        <option id="unit-1">Kilograma (kg)</option>
+					</select>
+				</fieldset>
+            </div>
+
+            <div class="input__conversor container">
+                <h3>Matéria</h3>
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                    <input id ="MM1" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select class="programa_unit">
+						<option id="unit-1">Micromol (μmol)</option>
+						<option id="unit-1"> Milimol (mmol)</option>
+						<option id="unit-1">Mol (mol)</option>
+					</select>
+				</fieldset>
+
+                <button class="botao__conversor"><img class="botao__icone" src="img/icone-seta.png"></button>
+               <!--  <div id="resposta" class="programa__resposta"></div> -->
+
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                        <input id ="MM2" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select class="programa_unit">
+						<option id="unit-1">Micromol (μmol)</option>
+						<option id="unit-1"> Milimol (mmol)</option>
+						<option id="unit-1">Mol (mol)</option>
+					</select>
+				</fieldset>
+            </div>
+
+            <div class="input__conversor container">
+                <h3>Temperatura</h3>
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                    <input id ="T1" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select class="programa_unit">
+						<option id="unit-1">Celsius (°C)</option>
+						<option id="unit-1"> Fahrenheit (°F)</option>
+						<option id="unit-1">Kelvin (K)</option>
+					</select>
+				</fieldset>
+
+                <button class="botao__conversor"><img class="botao__icone" src="img/icone-seta.png"></button>
+               <!--  <div id="resposta" class="programa__resposta"></div> -->
+
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                        <input id ="T2" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select class="programa_unit">
+						<option id="unit-1">Celsius (°C)</option>
+						<option id="unit-1"> Fahrenheit (°F)</option>
+						<option id="unit-1">Kelvin (K)</option>
+					</select>
+				</fieldset>
+            </div>
+
+            <script src="assets/js/converter.js"></script>
+        </section>
+        
+    </main>
+    <footer class="rodape">
+        <img class="logo" src="img/logo.png">
+        <p class="copyright">Todos os direitos reservados &copy; 2021</p>
+
+    </footer>
+</body>
