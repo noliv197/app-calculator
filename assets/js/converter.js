@@ -22,7 +22,9 @@ class converter
 		        final double mol_mmol = 1000;
 		        final double mmol_mol = 1/g_mg;
 		        */
+     		var resposta = document.querySelector("#V2");
 		var map = new Map();
+	
 		//Unidade de volume
 		map.set("ul_ml", 0.001);
 		map.set("ml_ul", 1 / map.get("ul_ml"));
@@ -41,12 +43,20 @@ class converter
 		map.set("mol_mmol", 1000.0);
 		map.set("mmol_mol", 1 / map.get("g_mg"));
 		//wanted units
-		var in_unit = "ul";
-		var in_value = 10;
-		var out_unit = "ml";
-		var out_value = 0.0;
+		
+		var in_value = parseFloat(document.getElementById("V1").value);
+		var out_value = parseFloat(document.getElementById("V2").value);
+
+
+		var in_unit = String(document.getElementById("unit-1").value);
+		var out_unit = String(document.getElementById("unit-2").value);
+	
 		out_value = in_value * map.get(in_unit + "_" + out_unit);
-		console.log(out_value);
+		resposta.innerHTML = in_unit;
+
 	}
 }
-converter.main([]);
+
+var button = document.querySelector(".botao__conversor");
+button.onclick = converter.main;
+
