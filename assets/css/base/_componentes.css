@@ -18,7 +18,31 @@
     width: 35%;
 }
 
-.botao__conversor{
+.botao__conversor_vol{
+    align-self: center; 
+    cursor: pointer;
+    transition: 1s all;
+    border: none;
+    background-color: var(--branco);
+}
+
+.botao__conversor_mass{
+    align-self: center; 
+    cursor: pointer;
+    transition: 1s all;
+    border: none;
+    background-color: var(--branco);
+}
+
+.botao__conversor_mat{
+    align-self: center; 
+    cursor: pointer;
+    transition: 1s all;
+    border: none;
+    background-color: var(--branco);
+}
+
+.botao__conversor_T{
     align-self: center; 
     cursor: pointer;
     transition: 1s all;

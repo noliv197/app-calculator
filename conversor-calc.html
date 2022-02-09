@@ -49,7 +49,7 @@
 
     </header>
     <main>
-        <div class="descricao">
+        <div class="descricao__conversor">
             <h2 class="descricao__titulo">Conversão de Unidades</h2>
             <p class="descricao__texto">
                 Ferramenta para converter uma unidade em outras grandeza da mesma unidade. Para realizar a conversão basta identificar
@@ -71,23 +71,23 @@
                     <div  class="programa__input___conversor">
                         <input id ="V1" class="programa__valor___conversor" type="number" >
                     </div>
-					<select class="programa_unit">
-						<option id="unit-1">Microlitro (μL)</option>
-						<option id="unit-1"> Mililitro (mL)</option>
-						<option id="unit-1">Litro (L)</option>
+					<select id="in_vol_unit" class="programa_unit">
+						<option id="unit-1" value=uL>Microlitro (μL)</option>
+						<option id="unit-1" value="mL"> Mililitro (mL)</option>
+						<option id="unit-1" value="L"selected>Litro (L)</option>
 					</select>
 				</fieldset>
 
-                <button class="botao__conversor"><img class="botao__icone" src="img/icone-seta.png"></button>
+                <button class="botao__conversor_vol"><img class="botao__icone" src="img/icone-seta.png"></button>
 
                 <fieldset class="programa__campo">
                     <div class="programa__input___conversor">
                         <div id ="V2" class="programa__valor___conversor" type="number" ></div>
                     </div>
-					<select class="programa_unit">
-						<option id="unit-2">Microlitro (μL)</option>
-						<option id="unit-2" selected>Mililitro (mL)</option>
-						<option id="unit-2">Litro (L)</option>
+					<select id="out_vol_unit" class="programa_unit">
+						<option id="unit-2" value="uL">Microlitro (μL)</option>
+						<option id="unit-2" value="mL" selected>Mililitro (mL)</option>
+						<option id="unit-2" value="L">Litro (L)</option>
 					</select>
 				</fieldset>
             </div>
@@ -98,7 +98,7 @@
                     <div class="programa__input___conversor">
                     <input id ="M1" class="programa__valor___conversor" type="number" >
                     </div>
-					<select class="programa_unit">
+					<select id="in_mass_unit" class="programa_unit">
 						<option id="unit-1">Micrograma (μg)</option>
 						<option id="unit-1"> Miligrama (mg)</option>
 						<option id="unit-1">Grama (g)</option>
@@ -106,14 +106,14 @@
 					</select>
 				</fieldset>
 
-                <button class="botao__conversor"><img class="botao__icone" src="img/icone-seta.png"></button>
+                <button class="botao__conversor_mass"><img class="botao__icone" src="img/icone-seta.png"></button>
                <!--  <div id="resposta" class="programa__resposta"></div> -->
 
                 <fieldset class="programa__campo">
                     <div class="programa__input___conversor">
                         <input id ="M2" class="programa__valor___conversor" type="number" >
                     </div>
-					<select class="programa_unit">
+					<select id="out_mass_unit"class="programa_unit">
 						<option id="unit-1">Micrograma (μg)</option>
 						<option id="unit-1"> Miligrama (mg)</option>
 						<option id="unit-1">Grama (g)</option>
@@ -128,21 +128,21 @@
                     <div class="programa__input___conversor">
                     <input id ="MM1" class="programa__valor___conversor" type="number" >
                     </div>
-					<select class="programa_unit">
+					<select id="in_mat_unit" class="programa_unit">
 						<option id="unit-1">Micromol (μmol)</option>
 						<option id="unit-1"> Milimol (mmol)</option>
 						<option id="unit-1">Mol (mol)</option>
 					</select>
 				</fieldset>
 
-                <button class="botao__conversor"><img class="botao__icone" src="img/icone-seta.png"></button>
+                <button class="botao__conversor_mat"><img class="botao__icone" src="img/icone-seta.png"></button>
                <!--  <div id="resposta" class="programa__resposta"></div> -->
 
                 <fieldset class="programa__campo">
                     <div class="programa__input___conversor">
                         <input id ="MM2" class="programa__valor___conversor" type="number" >
                     </div>
-					<select class="programa_unit">
+					<select id="out_mat_unit" class="programa_unit">
 						<option id="unit-1">Micromol (μmol)</option>
 						<option id="unit-1"> Milimol (mmol)</option>
 						<option id="unit-1">Mol (mol)</option>
@@ -156,7 +156,7 @@
                     <div class="programa__input___conversor">
                     <input id ="T1" class="programa__valor___conversor" type="number" >
                     </div>
-					<select class="programa_unit">
+					<select id="in_T_unit"class="programa_unit">
 						<option id="unit-1">Celsius (°C)</option>
 						<option id="unit-1"> Fahrenheit (°F)</option>
 						<option id="unit-1">Kelvin (K)</option>
@@ -170,7 +170,7 @@
                     <div class="programa__input___conversor">
                         <input id ="T2" class="programa__valor___conversor" type="number" >
                     </div>
-					<select class="programa_unit">
+					<select id="in_T_unit"class="programa_unit">
 						<option id="unit-1">Celsius (°C)</option>
 						<option id="unit-1"> Fahrenheit (°F)</option>
 						<option id="unit-1">Kelvin (K)</option>
