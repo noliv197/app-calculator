@@ -22,7 +22,7 @@ class converter
 		        final double mol_mmol = 1000;
 		        final double mmol_mol = 1/g_mg;
 		        */
-        var resposta = document.querySelector("#V2");
+        var resposta_vol = document.querySelector("#V2");
 		var map = new Map();
 	
 		//Unidade de volume
@@ -41,7 +41,7 @@ class converter
 		var out_unit = String(document.getElementById("out_vol_unit").value);
 	
 		out_value = in_value * map.get(in_unit + "_" + out_unit);
-		resposta.innerHTML = out_value;
+		resposta_vol.innerHTML = out_value;
 	}
 	static
 	mass(args)
@@ -65,7 +65,7 @@ class converter
 		        final double mol_mmol = 1000;
 		        final double mmol_mol = 1/g_mg;
 		        */
-        var resposta = document.querySelector("#M2");
+        var resposta_mass = document.querySelector("#M2");
 		var map = new Map();
 
 		//unidade de massa
@@ -84,7 +84,7 @@ class converter
 		var out_unit = String(document.getElementById("out_mass_unit").value);
 	
 		out_value = in_value * map.get(in_unit + "_" + out_unit);
-		resposta.innerHTML = out_value;
+		resposta_mass.innerHTML = out_value;
 
 	}
 	static
@@ -109,7 +109,7 @@ class converter
 		        final double mol_mmol = 1000;
 		        final double mmol_mol = 1/g_mg;
 		        */
-        var resposta = document.querySelector("#MM2");
+        var resposta_mat = document.querySelector("#MM2");
 		var map = new Map();
 	
 		//unidade de materia
@@ -127,16 +127,16 @@ class converter
 		var out_unit = String(document.getElementById("out_mat_unit").value);
 	
 		out_value = in_value * map.get(in_unit + "_" + out_unit);
-		resposta.innerHTML = in_unit;
+		resposta_mat.innerHTML = out_value;
 
 	}
 }
 
-var button_v = document.querySelector(".botao__conversor_vol");
+var button_v = document.querySelector(".botao__conversor___vol");
 button_v.onclick = converter.vol;
 
-var button_m = document.querySelector(".botao__conversor_mass");
+var button_m = document.querySelector(".botao__conversor___mass");
 button_m.onclick = converter.mass;
 
-var button_mm = document.querySelector(".botao__conversor_mat");
+var button_mm = document.querySelector(".botao__conversor___mat");
 button_mm.onclick = converter.mat;

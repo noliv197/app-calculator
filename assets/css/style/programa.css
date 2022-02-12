@@ -21,7 +21,7 @@
     border-bottom: 1px solid var(--cinza_escuro);
 }
 
-#V2{
+.programa__out___conversor{
     width: 150px;
     height: 35px;
     font-family: inherit;

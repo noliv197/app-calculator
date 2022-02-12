@@ -18,7 +18,7 @@
     width: 35%;
 }
 
-.botao__conversor_vol{
+.botao__conversor___vol, .botao__conversor___mass, .botao__conversor___mat, .botao__conversor___temp{
     align-self: center; 
     cursor: pointer;
     transition: 1s all;
@@ -26,29 +26,6 @@
     background-color: var(--branco);
 }
 
-.botao__conversor_mass{
-    align-self: center; 
-    cursor: pointer;
-    transition: 1s all;
-    border: none;
-    background-color: var(--branco);
-}
-
-.botao__conversor_mat{
-    align-self: center; 
-    cursor: pointer;
-    transition: 1s all;
-    border: none;
-    background-color: var(--branco);
-}
-
-.botao__conversor_T{
-    align-self: center; 
-    cursor: pointer;
-    transition: 1s all;
-    border: none;
-    background-color: var(--branco);
-}
 
 .botao__icone{
     width: 55%;
