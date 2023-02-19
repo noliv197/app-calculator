@@ -13,9 +13,12 @@ ENV PYTHONUNBUFFERED 1
 # install dependencies
 COPY requirements.txt .
 
-RUN apt update && apt install libpq-dev python3-dev -y
+RUN apt update && apt install libpq-dev python3-dev postgresql postgresql-contrib -y 
 
 RUN pip install -r requirements.txt
+
+RUN useradd -u 1001 calculator
+USER calculator
 
 # copy project
 COPY . .
