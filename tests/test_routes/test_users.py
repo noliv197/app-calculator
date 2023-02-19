@@ -19,8 +19,15 @@ register_payload = {
                     }
 
 def test_register(client, db_session):
+    wrong_password_payload = register_payload.copy()
+    wrong_password_payload["passwordConfirm"] = "wrong_password"
+    response = client.post("/register", json=wrong_password_payload)
+    assert response.content ==  b'{"detail":"Passwords do not match"}'
     response = client.post("/register", json=register_payload)
     assert response.status_code == 201
+    response = client.post("/register", json=register_payload)
+    assert response.content == b'{"detail":"Account already exist"}'
+    
 
 def test_login(client):
     login_payload = {
