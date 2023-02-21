@@ -1,19 +1,19 @@
-@import url(_variaveis.css);
-@import url(_reset.css);
-@import url(_normalize.css);
-@import url(_componentes.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('_reset.css');
+@import url("_variaveis.css");
+@import url('../style/Footer/footer.css');
+@import url('../style/Header/header.css');
+@import url('../style/Button/button.css');
 
-.cabecalho {
-    align-items: center;
-    background-color: var(--rosa);
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 10px;
+*{
+    font-size: 14px;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--font), sans-serif;
+    font-weight: var(--wg-normal);
 }
 
-.rodape{
-    background-color: var(--rosa);
-    padding: 20px 0;
-    text-align: center;
-}
+
+
 

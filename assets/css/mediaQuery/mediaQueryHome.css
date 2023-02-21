@@ -11,7 +11,7 @@
         height: 0;
     }
     .caixas__link{
-        border-bottom: 2.5px solid #9799A6;
+        border-bottom: 2.5px solid var(--border-secondary);
         font-size: 18px;
         padding: 7.5px;
     }

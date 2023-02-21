@@ -1,0 +1,12 @@
+@import url('./Field/field.css');
+.form__conversor{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.form--solutions{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Solução Tampão</title>
+    <title>Calculadora Diluição</title>
 
     <link href="../assets/css/base/base.css" rel="stylesheet">
     <link href="../assets/css/style/menu.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 <body>
     <header class="cabecalho__secundario">
         <div class="menu__principal">
-            <img class="logo" alt="logo calc" src="../assets/img/nome-logo.png">
+            <a href="../index.html"><img class="logo" alt="logo calc" src="assets/img/nome-logo.png"></a>
             <nav class="menu__principal___lista">
                 <ul class="menu__lista">
                     <li class="menu__lista___item"><a class="menu-principal__lista___link" href="../index.html">início</a></li>
@@ -40,39 +40,42 @@
     </header>
     <main>
         <div class="descricao">
-            <h2 class="descricao__titulo">Solução Tampão</h2>
+            <h2 class="descricao__titulo">Diluições</h2>
             <p class="descricao__texto">
-                A solução tampão é caracterizada por manter seu pH dentro de uma faixa ideal para algum tipo de procedimento.
-                <br> No caso de curiosidade ou falta de material adequado para medição de pH, podemos te ajudar a calcular a quantidade de ácido e base para adicionar em uma solução tampão.  
-                <br> O cálculo é feito a partir do pKa do ácido usado na preparação do tampão.
-                <br> O pH do tampão é dado por:
+                [Adicionar descrição]
                 <br>
             </p>
                 
             <p class="descricao__equacao">
                 <br>
-                pH = pKa + log [sal]/[ácido]</p>
+                C1 x V1 = C2 x V2</p>
         </div>
         <section class="programa">
             <div class="input">
                 <div class="programa__input">
-                    <label for="ph" class="programa__legenda">Informe o pH da solução tampão:</label>
-                    <input id ="ph" class="programa__valor" type="number" placeholder="" required>
+                    <label for="C1" class="programa__legenda">Concentração Inicial:</label>
+                    <input id ="C1" class="programa__valor" type="number" placeholder="C1" >
                 </div>
 
                 <div class="programa__input">
-                    <label for="pka" class="programa__legenda">Informe o pKa do ácido:</label>
-                    <input id ="pka" class="programa__valor" type="number" required>
+                    <label for="C2" class="programa__legenda">Concentração Final:</label>
+                    <input id ="C2" class="programa__valor" type="number" placeholder="C2" >
                 </div>
 
                 <div class="programa__input">
-                    <label for="volume" class="programa__legenda">Informe o volume final da solução:</label>
-                    <input id ="volume" class="programa__valor" type="number" placeholder="em litros (L)" required>
+                    <label for="V1" class="programa__legenda">Volume Inicial:</label>
+                    <input id ="V1" class="programa__valor" type="number" placeholder="V1" >
                 </div> 
+
+                <div class="programa__input">
+                    <label for="V2" class="programa__legenda">Volume final:</label>
+                    <input id ="V2" class="programa__valor" type="number" placeholder="V2" >
+                </div>
+
             </div>
             <button class="programa__botao">Calcular</button>
             <div id="resposta" class="programa__resposta"></div>
-            <script src="../assets/js/buffer.js"></script>
+            <script src="../assets/js/Dilution.js"></script>
         </section>
         
     </main>

@@ -7,7 +7,7 @@
 }
 .conteudo__caixas{
     box-sizing: border-box;
-	border: 5px solid var(--azul);
+	border: 5px solid var(--border-primary);
 	border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -46,9 +46,9 @@
 }
 
 .caixas__link{
-    border-bottom: 5.5px solid var(--cinza);
+    border-bottom: 5.5px solid var(--border-secondary);
     box-sizing: border-box;
-    color: black;
+    color: var(--text-primary);
     font-size: 25px;
     flex-grow: 2;
     padding: 7.5px 50px;
@@ -56,6 +56,6 @@
 }
 
 .caixas__link:hover{
-    border-color: var(--cinza);
+    border-color: var(--border-secondary);
     font-size: 30px;
 }
