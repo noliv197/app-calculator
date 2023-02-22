@@ -12,7 +12,7 @@
 .btn:hover{
     border-color: var(--border-primary);
     box-shadow: var(--shadow-primary);
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 .btn__primary{
     background-color: var(--bkg-primary);
