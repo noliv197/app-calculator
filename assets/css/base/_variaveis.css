@@ -9,6 +9,8 @@
 
     --border-primary: #5f9ea0; 
     --border-secondary : #9799A6;
+    --border-error: #c32b2b;
+    --border-valid: #2fdd83;
     --radius: 8px; 
 
     --font: 'Roboto';

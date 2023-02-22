@@ -4,6 +4,7 @@
 @import url('../style/Footer/footer.css');
 @import url('../style/Header/header.css');
 @import url('../style/Button/button.css');
+@import url('../style/Message/message.css');
 
 *{
     font-size: 14px;
@@ -13,6 +14,9 @@ body{
     font-family: var(--font), sans-serif;
     font-weight: var(--wg-normal);
 }
+/* main{
+    height: 100vh;
+} */
 
 
 
