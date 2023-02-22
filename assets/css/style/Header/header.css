@@ -1,0 +1,10 @@
+@import url('Menu/menu.css');
+header {
+    background-color: var(--bkg-secondary);
+    padding: var(--sp-rg);
+    position: relative;
+}
+
+header img{
+    width: 125px;
+}

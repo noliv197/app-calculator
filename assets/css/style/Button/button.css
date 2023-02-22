@@ -1,0 +1,43 @@
+.btn{
+    display: block;
+    border: 2.5px solid var(--border-secondary);
+    border-radius: var(--radius);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: var(--size-rg);
+    font-weight: var(--wg-regular);
+    padding: var(--sp-sm);
+    transition: .1s;
+}
+.btn:hover{
+    border-color: var(--border-primary);
+    box-shadow: var(--shadow-primary);
+    text-decoration: underline;
+}
+.btn__primary{
+    background-color: var(--bkg-primary);
+}
+.btn__secondary{
+	background: var(--bkg-secondary);
+	border: none;
+	font-weight: var(--wg-bold);
+    font-size: var(--size-md);
+	padding: var(--sp-rg);
+    width: 45%;
+}
+.btn__icon{
+    background-color: var(--bkg-primary);
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+}
+svg{
+    filter: var(--filter);
+}
+.btn--active{
+    background-color: var(--bkg-secondary);
+    box-shadow: var(--shadow-secondary);
+    border: none;
+}
+

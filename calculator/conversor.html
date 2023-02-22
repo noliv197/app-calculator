@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyLab - Conversor</title>
+    <link rel="icon" href="../assets/img/icone-conversor.png">
+
+    <link href="../assets/css/base/base.css" rel="stylesheet">
+    <link href="../assets/css/style/Description/description.css" rel="stylesheet">
+    <link href="../assets/css/style/Programm/programm.css" rel="stylesheet">
+    <link href="../assets/css/mediaQuery/mediaQuery.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script> -->
+
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <ul class="menu__list">
+                <li class="menu__list___item">
+                    <a href="../index.html"><img alt="EasyLab Logo" src="../assets/img/logo_name.png"></a>
+                </li>
+                <li class="menu__list___item">
+                    <a class="menu__list___link" href="../login/sign-in.html">Sign In</a>
+                </li>
+            </ul>
+            <ul class="menu__list">
+                <li class="menu__list___item">
+                    <a class="btn" href="#">conversor</a>
+                </li>
+                <li class="menu__list___item">
+                    <a class="btn" href="solutions.html">solutions</a>
+                </li>
+                <li class="menu__list___item">
+                    <a class="btn" href="#">others</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="menu__secondary">
+            <ul class="menu__list">
+                <li class="menu__list___item">
+                    <button class="btn btn__primary btn--active" data-tag="volume">volume</button>
+                </li>
+                <li class="menu__list___item">
+                    <button class="btn btn__primary" data-tag="mass">mass</button>
+                </li>
+                <li class="menu__list___item">
+                    <button class="btn btn__primary" data-tag="molarity">molarity</button>
+                </li>
+                <li class="menu__list___item">
+                    <button class="btn btn__primary" data-tag="temperature">temperature</button>
+                </li>
+                <li class="menu__list___item">
+                    <button class="btn btn__primary" data-tag="time">time</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="description" data-description>
+            <!-- <h2 class="description__title">Unit Conversor</h2>
+            <p class="description__text">
+                Ferramenta para converter uma unidade em outras grandeza da mesma unidade. Para realizar a conversão basta identificar
+                o tipo de unidade (Volume/Massa/Matéria/Temperatura) selecionar a unidade a ser transformada no campo a esquerda e a unidade alvo no campo a direita. 
+                <br>
+                Para as conversões de Volume, Massa e Matéria o Calculo é feito usando as unidades de grandeza, por exemplo: de mL para L ocorre uma multiplicação por 1000. 
+                <br>
+                Já para as conversoes de temperatura são utilizadas as formulas 
+            </p>
+            <br>
+            <p class="description__equation">
+                \(F = 1.8 C + 32\) e \(K = C + 273.15\) 
+            </p> -->
+        </section>
+
+        <section class="programm--conversor " data-conversor>
+            <!-- <h3 class="programm__title">Volume</h3>
+            <div class="programm__form--conversor">
+                <fieldset class="form__conversor" data-text="field-1">
+                    <input id ="V1" class="field--conversor" type="number" >
+                    <select id="in_vol_unit" class="field__unit--conversor">
+                        <option value=uL>Microlitro (μL)</option>
+                        <option value="mL"> Mililitro (mL)</option>
+                        <option value="L"selected>Litro (L)</option>
+                    </select>
+                </fieldset> -->
+    
+<!--                 
+                <fieldset class="form__conversor" data-text="field-2">
+                    <output id ="V2" class="field--conversor" type="number"></output>
+                    <select id="out_vol_unit" class="field__unit--conversor">
+                        <option value="uL">Microlitro (μL)</option>
+                        <option value="mL" selected>Mililitro (mL)</option>
+                        <option value="L">Litro (L)</option>
+                    </select>
+                </fieldset>
+            </div> -->
+
+            <!-- <div class="input__conversor container">
+                <h3>Massa</h3>
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                    <input id ="M1" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select id="in_mass_unit" class="programa_unit">
+						<option value="ug">Micrograma (μg)</option>
+						<option value="mg"> Miligrama (mg)</option>
+						<option value="g">Grama (g)</option>
+                        <option value="kg"selected>Kilograma (kg)</option>
+					</select>
+				</fieldset>
+
+                <button class="botao__conversor___mass"><img class="botao__icone" src="../assets/img/icone-seta.png"></button>
+              
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                        <div id ="M2" class="programa__out___conversor" type="number" ></div>
+                    </div>
+					<select id="out_mass_unit"class="programa_unit">
+						<option value="ug">Micrograma (μg)</option>
+						<option value="mg"> Miligrama (mg)</option>
+						<option value="g"selected>Grama (g)</option>
+                        <option value="kg">Kilograma (kg)</option>
+					</select>
+				</fieldset>
+            </div>
+
+            <div class="input__conversor container">
+                <h3>Matéria</h3>
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                    <input id ="MM1" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select id="in_mat_unit" class="programa_unit">
+						<option value="umol">Micromol (μmol)</option>
+						<option value="mmol"> Milimol (mmol)</option>
+						<option value="mol" selected>Mol (mol)</option>
+					</select>
+				</fieldset>
+
+                <button class="botao__conversor___mat"><img class="botao__icone" src="../assets/img/icone-seta.png"></button>
+               
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                        <div id ="MM2" class="programa__out___conversor" type="number" ></div>    
+                    </div>
+					<select id="out_mat_unit" class="programa_unit">
+						<option value="umol">Micromol (μmol)</option>
+						<option value="mmol"selected> Milimol (mmol)</option>
+						<option value="mol">Mol (mol)</option>
+					</select>
+				</fieldset>
+            </div>
+
+            <div class="input__conversor container">
+                <h3>Temperatura</h3>
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                    <input id ="T1" class="programa__valor___conversor" type="number" >
+                    </div>
+					<select id="in_T_unit"class="programa_unit">
+						<option value="c" selected>Celsius (°C)</option>
+						<option value="f"> Fahrenheit (°F)</option>
+						<option value="k">Kelvin (K)</option>
+					</select>
+				</fieldset>
+
+                <button class="botao__conversor___temp"><img class="botao__icone" src="../assets/img/icone-seta.png"></button>
+               
+                <fieldset class="programa__campo">
+                    <div class="programa__input___conversor">
+                        <div id ="T2" class="programa__out___conversor" type="number" ></div>
+                    </div>
+					<select id="in_T_unit"class="programa_unit">
+						<option value="c">Celsius (°C)</option>
+						<option value="f"> Fahrenheit (°F)</option>
+						<option value="k" selected>Kelvin (K)</option>
+					</select>
+				</fieldset>
+            </div> -->
+
+        </section>
+        
+    </main>
+    <footer>
+        <img src="../assets/img/logo.png" alt="Easylab Logo">
+        <p class="copyright">Todos os direitos reservados &copy; 2021</p>
+    </footer>
+    <script src="../assets/js/View/conversorView.js" type="module"></script>
+    <!-- <script src="../assets/js/converter.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyLab - Solutions</title>
+    <link rel="icon" href="../assets/img/icone-conversor.png">
+
+    <link href="../assets/css/base/base.css" rel="stylesheet">
+    <link href="../assets/css/style/Description/description.css" rel="stylesheet">
+    <link href="../assets/css/style/Programm/programm.css" rel="stylesheet">
+    <link href="../assets/css/mediaQuery/mediaQuery.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <ul class="menu__list">
+                <li class="menu__list___item">
+                    <a href="../index.html"><img alt="EasyLab Logo" src="../assets/img/logo_name.png"></a>
+                </li>
+                <li class="menu__list___item">
+                    <a class="menu__list___link" href="../login/sign-in.html">Sign In</a>
+                </li>
+            </ul>
+            <ul class="menu__list">
+                <li class="menu__list___item">
+                    <a class="btn" href="conversor.html">conversor</a>
+                </li>
+                <li class="menu__list___item">
+                    <a class="btn" href="#">solutions</a>
+                </li>
+                <li class="menu__list___item">
+                    <a class="btn" href="#">others</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="menu__secondary">
+            <ul class="menu__list">
+                <li class="menu__list___item">
+                    <button class="btn btn__primary btn--active" data-tag="buffer">buffer</button>
+                </li>
+                <li class="menu__list___item">
+                    <button class="btn btn__primary" data-tag="dilution">dilution</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="description" data-description>
+            <!-- <h2 class="description__title">Buffer</h2>
+            <p class="description__text">
+                A solução tampão é caracterizada por manter seu pH dentro de uma faixa ideal para algum tipo de procedimento.
+                <br> No caso de curiosidade ou falta de material adequado para medição de pH, podemos te ajudar a calcular a quantidade de ácido e base para adicionar em uma solução tampão.  
+                <br> O cálculo é feito a partir do pKa do ácido usado na preparação do tampão.
+                <br> O pH do tampão é dado por:
+            </p>
+            <br>
+            <p class="description__equation">
+                pH = pKa + log [sal]/[ácido]
+            </p> -->
+        </section>
+        <section class="programm--solutions" >
+            <form class="form--solutions" data-solutions>
+                <!-- <div class="field__container">
+                    <label for="ph" class="field__legend">Buffer's pH: </label>
+                    <input id ="ph" class="field--solutions" type="number" placeholder="" required>
+                </div>
+
+                <div class="field__container">
+                    <label for="pka" class="field__legend">Acid's pKa: </label>
+                    <input id ="pka" class="field--solutions" type="number" required>
+                </div>
+
+                <div class="field__container">
+                    <label for="volume" class="field__legend">Final Volume: </label>
+                    <input id ="volume" class="field--solutions" type="number" placeholder="in Liters (L)" required>
+                </div> 
+                <button class="btn btn__secondary">Calculate</button> -->
+            </form>
+            <output id="resposta" class="field__output"></output> 
+        </section>
+        
+    </main>
+    <footer>
+        <img src="../assets/img/logo.png" alt="Easylab Logo">
+        <p class="copyright">Todos os direitos reservados &copy; 2021</p>
+    </footer>
+    <script src="../assets/js/View/solutionView.js" type="module"></script>
+    <!-- <script src="../assets/js/buffer.js"></script> -->
+</body>
+</html>
