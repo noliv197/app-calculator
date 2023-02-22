@@ -39,17 +39,17 @@
         <nav class="menu__secondary">
             <ul class="menu__list">
                 <li class="menu__list___item">
-                    <a class="btn btn__primary btn--active" href="solutions.html">buffer</a>
+                    <button class="btn btn__primary btn--active" data-tag="buffer">buffer</button>
                 </li>
                 <li class="menu__list___item">
-                    <a class="btn btn__primary" href="dilution.html">dilution</a>
+                    <button class="btn btn__primary" data-tag="dilution">dilution</button>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="description">
-            <h2 class="description__title">Buffer</h2>
+        <section class="description" data-description>
+            <!-- <h2 class="description__title">Buffer</h2>
             <p class="description__text">
                 A solução tampão é caracterizada por manter seu pH dentro de uma faixa ideal para algum tipo de procedimento.
                 <br> No caso de curiosidade ou falta de material adequado para medição de pH, podemos te ajudar a calcular a quantidade de ácido e base para adicionar em uma solução tampão.  
@@ -59,11 +59,11 @@
             <br>
             <p class="description__equation">
                 pH = pKa + log [sal]/[ácido]
-            </p>
+            </p> -->
         </section>
-        <section class="programm--solutions">
-            <form class="form--solutions">
-                <div class="field__container">
+        <section class="programm--solutions" >
+            <form class="form--solutions" data-solutions>
+                <!-- <div class="field__container">
                     <label for="ph" class="field__legend">Buffer's pH: </label>
                     <input id ="ph" class="field--solutions" type="number" placeholder="" required>
                 </div>
@@ -77,9 +77,9 @@
                     <label for="volume" class="field__legend">Final Volume: </label>
                     <input id ="volume" class="field--solutions" type="number" placeholder="in Liters (L)" required>
                 </div> 
-                <button class="btn btn__secondary">Calculate</button>
+                <button class="btn btn__secondary">Calculate</button> -->
             </form>
-            <output id="resposta" class="field__output"></output>
+            <output id="resposta" class="field__output"></output> 
         </section>
         
     </main>
@@ -87,7 +87,7 @@
         <img src="../assets/img/logo.png" alt="Easylab Logo">
         <p class="copyright">Todos os direitos reservados &copy; 2021</p>
     </footer>
-    
-    <script src="../assets/js/buffer.js"></script>
+    <script src="../assets/js/View/solutionView.js" type="module"></script>
+    <!-- <script src="../assets/js/buffer.js"></script> -->
 </body>
 </html>

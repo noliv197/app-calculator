@@ -23,17 +23,17 @@
 }
 
 .conteudo__icone___conversor{
-    background: url('../../img/icone-conversor.png') no-repeat center/ 35%;
+    background: url('../../../img/icone-conversor.png') no-repeat center/ 35%;
     height: 200px;
 }
 
 .conteudo__icone___solucao{
-    background: url('../../img/icone-solucao.png') no-repeat center / 25%;
+    background: url('../../../img/icone-solucao.png') no-repeat center / 25%;
     height: 200px;
 }
 
 .conteudo__icone___calculator{
-    background: url('../../img/logo.png') no-repeat center / 25%;
+    background: url('../../../img/logo.png') no-repeat center / 25%;
     height: 200px;
 }
 

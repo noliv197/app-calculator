@@ -47,26 +47,26 @@
         <nav class="menu__secondary">
             <ul class="menu__list">
                 <li class="menu__list___item">
-                    <button class="btn btn__primary btn--active">volume</button>
+                    <button class="btn btn__primary btn--active" data-tag="volume">volume</button>
                 </li>
                 <li class="menu__list___item">
-                    <button class="btn btn__primary">mass</button>
+                    <button class="btn btn__primary" data-tag="mass">mass</button>
                 </li>
                 <li class="menu__list___item">
-                    <button class="btn btn__primary">molarity</button>
+                    <button class="btn btn__primary" data-tag="molarity">molarity</button>
                 </li>
                 <li class="menu__list___item">
-                    <button class="btn btn__primary">temperature</button>
+                    <button class="btn btn__primary" data-tag="temperature">temperature</button>
                 </li>
                 <li class="menu__list___item">
-                    <button class="btn btn__primary">time</button>
+                    <button class="btn btn__primary" data-tag="time">time</button>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="description">
-            <h2 class="description__title">Unit Conversor</h2>
+        <section class="description" data-description>
+            <!-- <h2 class="description__title">Unit Conversor</h2>
             <p class="description__text">
                 Ferramenta para converter uma unidade em outras grandeza da mesma unidade. Para realizar a conversão basta identificar
                 o tipo de unidade (Volume/Massa/Matéria/Temperatura) selecionar a unidade a ser transformada no campo a esquerda e a unidade alvo no campo a direita. 
@@ -78,26 +78,23 @@
             <br>
             <p class="description__equation">
                 \(F = 1.8 C + 32\) e \(K = C + 273.15\) 
-            </p>
+            </p> -->
         </section>
 
-        <section class="programm--conversor">
-            <h3 class="programm__title">Volume</h3>
+        <section class="programm--conversor " data-conversor>
+            <!-- <h3 class="programm__title">Volume</h3>
             <div class="programm__form--conversor">
-                <fieldset class="form__conversor">
+                <fieldset class="form__conversor" data-text="field-1">
                     <input id ="V1" class="field--conversor" type="number" >
                     <select id="in_vol_unit" class="field__unit--conversor">
                         <option value=uL>Microlitro (μL)</option>
                         <option value="mL"> Mililitro (mL)</option>
                         <option value="L"selected>Litro (L)</option>
                     </select>
-                </fieldset>
+                </fieldset> -->
     
-                <button class="btn__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 150.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 96 32 96C14.3 96 0 110.3 0 128s14.3 32 32 32l306.7 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zm-333.3 352c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 416 416 416c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96z"/></svg>
-                </button>
-                
-                <fieldset class="form__conversor">
+<!--                 
+                <fieldset class="form__conversor" data-text="field-2">
                     <output id ="V2" class="field--conversor" type="number"></output>
                     <select id="out_vol_unit" class="field__unit--conversor">
                         <option value="uL">Microlitro (μL)</option>
@@ -105,7 +102,7 @@
                         <option value="L">Litro (L)</option>
                     </select>
                 </fieldset>
-            </div>
+            </div> -->
 
             <!-- <div class="input__conversor container">
                 <h3>Massa</h3>
@@ -197,7 +194,7 @@
         <img src="../assets/img/logo.png" alt="Easylab Logo">
         <p class="copyright">Todos os direitos reservados &copy; 2021</p>
     </footer>
-    
+    <script src="../assets/js/View/conversorView.js" type="module"></script>
     <!-- <script src="../assets/js/converter.js"></script> -->
 </body>
 </html>
