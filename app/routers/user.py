@@ -83,7 +83,6 @@ def login(payload: schemas.LoginUserSchema, response: Response, db: Session = De
 @router.get('/refresh')
 def refresh_token(response: Response, request: Request, Authorize: AuthJWT = Depends(), db: Session = Depends(get_db)):
     try:
-        print(Authorize._refresh_cookie_key)
         Authorize.jwt_refresh_token_required()
 
         user_id = Authorize.get_jwt_subject()
