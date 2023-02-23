@@ -13,4 +13,12 @@ class User(Base):
     updated_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text("now()"))
 
+class Activities(Base):
+    __tablename__ = 'activities'
+    id = Column(Integer, primary_key=True, nullable=False)
+    user_id = Column(ForeignKey("users.id"), nullable=False)
+    activity = Column(String)
+    created_at = Column(TIMESTAMP(timezone=True),
+                        nullable=False, server_default=text("now()"))
+
 
