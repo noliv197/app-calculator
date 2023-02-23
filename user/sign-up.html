@@ -32,25 +32,25 @@
     </header>
     <main>
         <h1 class="form__title">Register</h1>
-        <form class="form--user" data-form>
+        <form class="form--user" data-form="register">
             <div class="form__container">
                 <label for="email" class="field__legend">Enter your email: </label>
-                <input id="email"  class="field--user" type="email" placeholder="youremail@example.com" required>
+                <input data-type="emailRegister" id="email"  class="field--user" type="email" placeholder="youremail@example.com" required>
                 <span class="message--error" data-error></span>
             </div>
             <div class="form__container">
                 <label for="username" class="field__legend">Choose a Username: </label>
-                <input id="username" class="field--user" type="text" placeholder="Username" required>
+                <input data-type="usernameRegister" id="username" class="field--user" type="text" placeholder="Username" required>
                 <span class="message--error" data-error></span>
             </div>
             <div class="form__container">
                 <label for="password" class="field__legend">Choose your Password: </label>
-                <input id="password" class="field--user" type="password" placeholder="Password" required>
+                <input data-type="passwordRegister" id="password" class="field--user" type="password" placeholder="Password" required>
                 <span class="message--error" data-error></span>
             </div>
             <div class="form__container">
                 <label for="confirm" class="field__legend">Confirm Password: </label>
-                <input id="confirm" class="field--user" type="password" placeholder="Confirm Password" required>
+                <input data-type="confirm" id="confirm" class="field--user" type="password" placeholder="Confirm Password" required>
                 <span class="message--error" data-error></span>
             </div>
             <button class="btn btn__secondary">Register</button>
@@ -64,5 +64,6 @@
         <img src="../assets/img/logo.png" alt="Easylab Logo">
         <p class="copyright">Todos os direitos reservados &copy; 2021</p>
     </footer>
+    <script src="../assets/js/Controller/submission.js" type="module"></script>
 </body>
 </html>
