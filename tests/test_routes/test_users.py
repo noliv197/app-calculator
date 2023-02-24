@@ -8,7 +8,7 @@ from sqlalchemy import select
 import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
 from app.main import app
-from app.models import User
+from app.api.models.models import User
 
 def test_register(client, db_session, register_payload):
     wrong_password_payload = register_payload.copy()

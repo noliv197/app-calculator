@@ -8,9 +8,9 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
 
 
-from app.models import Base
-from app.database import get_db
-from app.routers import user
+from app.api.models.models import Base
+from app.api.database.database import get_db
+from app.api.routers import user
 from app.utils import hash_password
 
 from pytest_postgresql import factories

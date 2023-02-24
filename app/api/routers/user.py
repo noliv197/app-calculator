@@ -1,8 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
-from ..database import get_db
+
+from ..models import models
+from ..database.database import get_db
 from sqlalchemy.orm import Session
 from sqlalchemy import delete
-from .. import models, schemas, oauth2
+from ... import schemas, oauth2
 
 router = APIRouter()
 
@@ -11,11 +13,11 @@ from fastapi import APIRouter, Request, Response, status, Depends, HTTPException
 from pydantic import EmailStr
 
 from app import oauth2
-from .. import schemas, models, utils
+from ... import schemas, utils
 from sqlalchemy.orm import Session
-from ..database import get_db
+from ..database.database import get_db
 from app.oauth2 import AuthJWT
-from ..config import settings
+from ...config import settings
 
 
 router = APIRouter()
