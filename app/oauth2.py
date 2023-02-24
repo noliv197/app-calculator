@@ -4,8 +4,8 @@ from fastapi import Depends, HTTPException, status
 from fastapi_jwt_auth import AuthJWT
 from pydantic import BaseModel
 
-from . import models
-from .database import get_db
+from .api.models import models
+from .api.database.database import get_db
 from sqlalchemy.orm import Session
 from .config import settings
 
