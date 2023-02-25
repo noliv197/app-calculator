@@ -7,6 +7,7 @@ app = FastAPI()
 
 origins = [
     settings.CLIENT_ORIGIN,
+    '*'
 ]
 
 app.add_middleware(

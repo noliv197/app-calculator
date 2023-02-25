@@ -1,33 +1,37 @@
 import User from "../Models/UserModel.js";
-
+import { UserServer
+ } from "./server.js";
 export default class Submission{
     constructor(){
         this._form = document.querySelector('form')
+        this._server = new UserServer()
         this._message 
     }
 
-    submitLogin(){
-        this._form.addEventListener('submit', event => {
+    async submitLogin(){
+        this._form.addEventListener('submit', async event => {
             event.preventDefault();
             const username = document.querySelector("[data-type='usernameLogin']").value
             const password = document.querySelector("[data-type='passwordLogin']").value
-            console.log(username,password)
+
             //login
+            await this._server.loginRequest(username,password)
+
             //redirect setTimeout("location.href = 'http://www.home.com';",5000);
         })
     }
 
-    submitRegister(){
-        this._form.addEventListener('submit', event => {
+    async submitRegister(){
+        this._form.addEventListener('submit', async event => {
             event.preventDefault();
             const email = document.querySelector("[data-type='emailRegister']").value 
             const username = document.querySelector("[data-type='usernameRegister']").value 
             const password = document.querySelector("[data-type='passwordRegister']").value       
-            
-            console.log(email,username,password)
             // create new user
-            new User(username,email,password)
+            const user = new User(username,email,password)
             // send new user to server
+            //await this._server.registerRequest(user)
+            await this._server.registerRequest(username,email,password)
     
         })
     }
