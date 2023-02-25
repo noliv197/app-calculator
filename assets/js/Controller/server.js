@@ -27,10 +27,12 @@ export class Server{
 
 export class UserServer extends Server{
     constructor(){
-        this.url = ''
+        super()
+        this.url = 'http://localhost:8000/api/users/login'
+        this.urlRegister = 'http://localhost:8000/api/users/register'
     }   
 
-    async postRequest(username,email,password){
+    async loginRequest(username,password){
         const connection = await fetch(this.url,{
             method: "POST",
             headers: {
@@ -38,24 +40,39 @@ export class UserServer extends Server{
             },
             body: JSON.stringify({
                 username: username,
-                email: email,
                 password: password
             })
         })
         const convertedConnection = await connection.json()
         return convertedConnection
     }
+    async registerRequest(username,email,password){
+        const connection = await fetch(this.urlRegister,{
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                name: username,
+                email: email,
+                password: password,
+                passwordConfirm: password
+            })
+        })
+        const convertedConnection = await connection.json()
+        return convertedConnection
+    }
 
-    async updateRequest(username,email,password){
+    async updateRequest(user){
         const connection = await fetch(`${this.url}/${id}`,{
             method: "PUT",
             headers: {
                 "Content-type": "application/json"
             },
             body: JSON.stringify({
-                username: username,
-                email: email,
-                password: password
+                username: user.username,
+                email: user.email,
+                password: user.password
             })
         })
         const convertedConnection = await connection.json()
@@ -65,6 +82,7 @@ export class UserServer extends Server{
 
 export class ContentServer extends Server {
     constructor(){
+        super()
         this.url = ''
     }   
     async postRequest(title,date,content,tags){

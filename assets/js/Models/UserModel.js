@@ -1,5 +1,5 @@
 //import {scryptSync, randomBytes, timingSafeEqual} from 'crypto'
-
+//import bcrypt
 export default class User{
     constructor(username,email,password){
         this._username = username
@@ -14,11 +14,13 @@ export default class User{
     get email() {
         return this._email;
     }
+    get password() {
+        return this._hash;
+    }
 
     cryptoPassword(password){
-        const random = randomBytes(16).toString('hex')
-        const hash = scryptSync(password,random,64).toString('hex')
-        return `${random}:${hash}`
+        const cost = 12
+        return bcrypt.hash(password, cost)
     }
     
 }
