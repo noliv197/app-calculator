@@ -31,3 +31,26 @@ class FilteredUserResponse(UserBaseSchema):
     id: int
 
 
+class ActivityBaseSchema(BaseModel):
+    title: str
+    activity: str
+    user_id: int | None = None
+    created_at: datetime
+
+    class Config:
+        orm_mode = True
+
+
+class CreateActivitySchema(ActivityBaseSchema):
+    pass
+
+
+class ActivityResponse(ActivityBaseSchema):
+    id: int
+    user_id: int
+    created_at: datetime
+
+class ListActivityResponse(BaseModel):
+    status: str
+    results: int
+    activities: List[ActivityResponse]
