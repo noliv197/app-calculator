@@ -16,6 +16,8 @@ class Settings(BaseSettings):
 
     CLIENT_ORIGIN: str
 
+    TEST_USER_EMAIL: str
+
     class Config:
         env_file = './.env'
 

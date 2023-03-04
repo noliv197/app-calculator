@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.api.models.models import Base
 from app.api.database.database import get_db
-from app.api.routers import user
+from app.api.routers import user, activity
 from app.utils import hash_password
 
 from pytest_postgresql import factories
@@ -18,7 +18,9 @@ from pytest_postgresql.janitor import DatabaseJanitor
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm.session import Session
 from sqlalchemy.sql import text
-from app.oauth2 import AuthJWT
+
+from app.config import settings 
+from tests.utils.users import authentication_token_from_email 
 
 
 test_db = factories.postgresql_proc(port=None, dbname="test_db")
@@ -26,6 +28,7 @@ test_db = factories.postgresql_proc(port=None, dbname="test_db")
 def start_application():
     app = FastAPI()
     app.include_router(user.router)
+    app.include_router(activity.router)
     return app
 
 @pytest.fixture(scope="function")
@@ -87,3 +90,8 @@ def register_payload():
             }
     
 
+@pytest.fixture(scope="function")
+def normal_user_token_headers(client: TestClient, db_session: Session):
+    return  authentication_token_from_email(
+        client=client, email=settings.TEST_USER_EMAIL, db=db_session
+    )
