@@ -22,14 +22,10 @@ def create_activity(activity: schemas.CreateActivitySchema, db: Session = Depend
 def get_activity(start_date: str, end_date: str, db: Session = Depends(get_db), limit: int = 10, page: int = 1, search: str = '', user_id: str = Depends(require_user)):
     skip = (page - 1) * limit
 
-    print(start_date, end_date)
     query = db.query(models.Activity).filter(
         models.Activity.activity.contains(search), 
         models.Activity.created_at.between(str(start_date), str(end_date)),
         models.Activity.user_id == user_id).order_by(
-        models.Activity.created_at.desc()).limit(limit).offset(skip)
-    
-    print(query.statement.compile(dialect=postgresql.dialect()))
- 
+        models.Activity.created_at.desc()).limit(limit).offset(skip) 
     activities = query.all()
     return {'status': 'success', 'results': len(activities), 'activities': activities}
