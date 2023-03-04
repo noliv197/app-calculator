@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+
 import json
 import pytest
 
@@ -13,7 +14,7 @@ def test_create_activity(client, normal_user_token_headers):
     assert response.status_code == 201
 
 def test_retrieve_activity(client, normal_user_token_headers):
-    #pass start and end dates
-    response = client.get("/",headers=normal_user_token_headers)
-    print(response.content)
-    assert False
+    start_date = "2023-01-01"
+    end_date = "2023-12-30"
+    response = client.get(f"/?start_date={start_date}&end_date={end_date}",headers=normal_user_token_headers)
+    assert response.status_code == 200
