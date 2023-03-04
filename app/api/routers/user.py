@@ -11,6 +11,7 @@ from pydantic import EmailStr
 from app.oauth2 import AuthJWT
 from app.config import settings
 
+from app.api.database.repository.users import create_new_user, find_user_by_email, find_user_by_id, delete_user
 
 router = APIRouter()
 ACCESS_TOKEN_EXPIRES_IN = settings.ACCESS_TOKEN_EXPIRES_IN
@@ -19,32 +20,14 @@ REFRESH_TOKEN_EXPIRES_IN = settings.REFRESH_TOKEN_EXPIRES_IN
 
 @router.post('/register', status_code=status.HTTP_201_CREATED, response_model=schemas.UserResponse)
 def create_user(payload: schemas.CreateUserSchema, db: Session = Depends(get_db)):
-    # Check if user already exist
-    user = db.query(models.User).filter(
-        models.User.email == EmailStr(payload.email.lower())).first()
-    if user:
-        raise HTTPException(status_code=status.HTTP_409_CONFLICT,
-                            detail='Account already exist')
-    # Compare password and passwordConfirm
-    if payload.password != payload.passwordConfirm:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST, detail='Passwords do not match')
-    #  Hash the password
-    payload.password = utils.hash_password(payload.password)
-    del payload.passwordConfirm
-    payload.email = EmailStr(payload.email.lower())
-    new_user = models.User(**payload.dict())
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
+    new_user = create_new_user(payload=payload,db=db)
     return new_user
 
 
 @router.post('/login')
 def login(payload: schemas.LoginUserSchema, response: Response, db: Session = Depends(get_db), Authorize: AuthJWT = Depends()):
     # Check if the user exist
-    user = db.query(models.User).filter(
-        models.User.email == EmailStr(payload.email.lower())).first()
+    user = find_user_by_email(EmailStr(payload.email.lower()), db)
     if not user:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
                             detail='Incorrect Email or Password')
@@ -83,7 +66,7 @@ def refresh_token(response: Response, request: Request, Authorize: AuthJWT = Dep
         if not user_id:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                                 detail='Could not refresh access token')
-        user = db.query(models.User).filter(models.User.id == user_id).first()
+        user = find_user_by_id(user_id, db)
         if not user:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                                 detail='The user belonging to this token no logger exist')
@@ -115,15 +98,13 @@ def logout(response: Response, Authorize: AuthJWT = Depends(), user_id: str = De
 
 @router.get('/me', response_model=schemas.UserResponse)
 def get_me(db: Session = Depends(get_db), user_id: str = Depends(oauth2.require_user)):
-    user = db.query(models.User).filter(models.User.id == user_id).first()
+    user = find_user_by_id(user_id, db)
     return user
 
 @router.delete("/{user_id}")
-async def delete_user(user_id: int, db: Session = Depends(get_db)):
-    user = db.query(models.User).filter(models.User.id == user_id).first()
+async def del_user(user_id: int, db: Session = Depends(get_db)):
+    user = find_user_by_id(user_id, db)
     if user is None:
         raise HTTPException(status_code=404, detail="User not found")
-
-    db.delete(user)
-    db.commit()
+    delete_user(user, db=db)
     return {"message": f"User {user_id} deleted"}
