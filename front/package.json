@@ -1,0 +1,26 @@
+{
+  "name": "app-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noliv197/app-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noliv197/app-calculator/issues"
+  },
+  "homepage": "https://github.com/noliv197/app-calculator#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
