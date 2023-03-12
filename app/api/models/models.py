@@ -30,4 +30,5 @@ class Calculation(Base):
     to = Column(String, nullable=False)
     value = Column(Float, nullable=False)
     value_from = Column(Float, nullable=False)
+    user_id = Column(ForeignKey("users.id"), nullable=False)
 
