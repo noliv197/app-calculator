@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.api.models.models import Base
 from app.api.database.database import get_db
-from app.api.routers import user, activity
+from app.api.routers import user, activity, convertion
 from app.utils import hash_password
 
 from pytest_postgresql import factories
@@ -27,8 +27,9 @@ test_db = factories.postgresql_proc(port=None, dbname="test_db")
 
 def start_application():
     app = FastAPI()
-    app.include_router(user.router)
-    app.include_router(activity.router)
+    app.include_router(user.router, prefix = "/api/users")
+    app.include_router(activity.router, prefix = "/api/activities")
+    app.include_router(convertion.router, prefix = "/api/convertions")
     return app
 
 @pytest.fixture(scope="function")
@@ -75,10 +76,12 @@ def app(db_session):
     #Base.metadata.drop_all(db_session.bind)
 
 @pytest.fixture(scope="function")
-def user_created(db_session):
-    db_session.execute(text(f'''INSERT INTO public.users
+def user_created(db_session: Session):
+    insert = db_session.execute(text(f'''INSERT INTO public.users
                         ("name", email, "password", created_at, updated_at)
-                        VALUES('John', 'john@mail.com', '{hash_password('secret_password')}', now(), now());'''))
+                        VALUES('John', 'john@mail.com', '{hash_password('secret_password')}', now(), now()) RETURNING id;'''))
+    user_id = insert.fetchone()[0]
+    yield user_id
 
 @pytest.fixture(scope="function")
 def register_payload():
@@ -95,3 +98,11 @@ def normal_user_token_headers(client: TestClient, db_session: Session):
     return  authentication_token_from_email(
         client=client, email=settings.TEST_USER_EMAIL, db=db_session
     )
+
+@pytest.fixture(scope="function")
+def activity_created(db_session):
+    insert = db_session.execute(text(f'''INSERT INTO public.activities
+                                    (user_id, title, activity, created_at)
+                                    VALUES(1, 'test activity', 'this is a test activity \n by john', '2023-11-30') RETURNING id;'''))
+    activity_id = insert.fetchone()[0]
+    yield activity_id

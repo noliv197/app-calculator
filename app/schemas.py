@@ -54,3 +54,27 @@ class ListActivityResponse(BaseModel):
     status: str
     results: int
     activities: List[ActivityResponse]
+
+class ConvertionBaseSchema(BaseModel):
+    type: str
+    from_: str
+    to: str
+    value_from: float
+    user_id: int | None = None
+
+    class Config:
+        orm_mode = True
+
+class CreateConvertionSchema(ConvertionBaseSchema):
+    pass
+
+class ConvertionResponse(ConvertionBaseSchema):
+    id: int
+    user_id: int
+    created_at: datetime
+    value: float
+
+class ListConvertionResponse(BaseModel):
+    status: str
+    results: int
+    activities: List[ConvertionResponse]

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
-from app.api.routers import user, activity
+from app.api.routers import convertion, user, activity
 
 app = FastAPI()
 
@@ -19,6 +19,7 @@ app.add_middleware(
 )
 app.include_router(user.router, tags=['Users'], prefix='/api/users')
 app.include_router(activity.router, tags=['Activities'], prefix='/api/activities')
+app.include_router(convertion.router, tags=['Convertions'], prefix='/api/convertions')
 
 
 @app.get('/api/healthchecker')

@@ -1,5 +1,6 @@
 from app.api.database.database import Base
 from sqlalchemy import TIMESTAMP, Column, ForeignKey, String, text, Integer, Float
+import pint
 
 
 class User(Base):
@@ -33,4 +34,10 @@ class Convertion(Base):
     user_id = Column(ForeignKey("users.id"), nullable=False)
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text("now()"))
-
+    
+    def calculate_value(self):
+        ureg = pint.UnitRegistry()
+        q = self.value_from * ureg.parse_expression(self.from_)
+        q_end = q.to(ureg.parse_expression(self.to))
+        self.value = q_end.magnitude
+        return self.value
