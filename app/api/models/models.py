@@ -31,4 +31,6 @@ class Convertion(Base):
     value = Column(Float, nullable=False)
     value_from = Column(Float, nullable=False)
     user_id = Column(ForeignKey("users.id"), nullable=False)
+    created_at = Column(TIMESTAMP(timezone=True),
+                        nullable=False, server_default=text("now()"))
 
