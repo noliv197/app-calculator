@@ -1,6 +1,3 @@
-from fastapi.testclient import TestClient
-import json
-import pytest
 from sqlalchemy.sql import text
 from sqlalchemy import select
 

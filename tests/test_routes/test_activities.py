@@ -1,8 +1,3 @@
-from fastapi.testclient import TestClient
-
-import json
-import pytest
-
 def test_create_activity(client, normal_user_token_headers):
     data = {
             "title": "teste2",
