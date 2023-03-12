@@ -1,8 +1,8 @@
-"""Added calculations table
+"""Add calculations table
 
-Revision ID: a6fd4fc65288
+Revision ID: 254ff0355cfb
 Revises: fb711d75f2f9
-Create Date: 2023-03-12 10:52:41.797290
+Create Date: 2023-03-12 11:18:37.726708
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'a6fd4fc65288'
+revision = '254ff0355cfb'
 down_revision = 'fb711d75f2f9'
 branch_labels = None
 depends_on = None
@@ -23,7 +23,8 @@ def upgrade() -> None:
     sa.Column('type', sa.String(), nullable=False),
     sa.Column('from_', sa.String(), nullable=False),
     sa.Column('to', sa.String(), nullable=False),
-    sa.Column('value', sa.String(), nullable=False),
+    sa.Column('value', sa.Float(), nullable=False),
+    sa.Column('value_from', sa.Float(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

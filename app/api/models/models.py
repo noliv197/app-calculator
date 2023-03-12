@@ -1,5 +1,5 @@
 from app.api.database.database import Base
-from sqlalchemy import TIMESTAMP, Column, ForeignKey, String, text, Integer
+from sqlalchemy import TIMESTAMP, Column, ForeignKey, String, text, Integer, Float
 
 
 class User(Base):
@@ -22,11 +22,12 @@ class Activity(Base):
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text("now()"))
     
-class Calculations(Base):
+class Calculation(Base):
     __tablename__ = 'calculations'
     id = Column(Integer, primary_key=True, nullable=False)
     type = Column(String, nullable=False)
     from_ = Column(String, nullable=False)
     to = Column(String, nullable=False)
-    value = Column(String, nullable=False)
+    value = Column(Float, nullable=False)
+    value_from = Column(Float, nullable=False)
 
