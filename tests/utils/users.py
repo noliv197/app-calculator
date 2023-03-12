@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 
 def user_authentication_headers(client: TestClient, email: str, password: str):
     login_payload = {"email": email, "password": password}
-    r = client.post("/login", json=login_payload)
+    r = client.post("/api/users/login", json=login_payload)
     response = r.json()
     auth_token = response["access_token"]
     headers = {"Authorization": f"Bearer {auth_token}"}
