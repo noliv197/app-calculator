@@ -22,8 +22,8 @@ class Activity(Base):
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text("now()"))
     
-class Calculation(Base):
-    __tablename__ = 'calculations'
+class Convertion(Base):
+    __tablename__ = 'convertions'
     id = Column(Integer, primary_key=True, nullable=False)
     type = Column(String, nullable=False)
     from_ = Column(String, nullable=False)
