@@ -21,5 +21,12 @@ class Activity(Base):
     activity = Column(String)
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text("now()"))
-
+    
+class Calculations(Base):
+    __tablename__ = 'calculations'
+    id = Column(Integer, primary_key=True, nullable=False)
+    type = Column(String, nullable=False)
+    from_ = Column(String, nullable=False)
+    to = Column(String, nullable=False)
+    value = Column(String, nullable=False)
 
