@@ -4,9 +4,16 @@ import Form from '../components/Form'
 function Register() {
     return (
         <>
-            <Header/>
+            <Header
+                navList={["calculator"]}
+            />
             <main>
-                <Form/>
+                <Form
+                    type='register' 
+                    button='Register' 
+                    h1='Register'
+                    links={true}
+                />
             </main>
         </>
     );

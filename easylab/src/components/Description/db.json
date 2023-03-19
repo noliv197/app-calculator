@@ -1,0 +1,41 @@
+{
+    "conversor":{
+        "volume" : {
+            "title": "Unit Conversor",
+            "description": "[Add description]",
+            "equation": "[Add equation]"
+        },
+        "mass" :{
+            "title": "Unit Conversor",
+            "description": "[Add description]",
+            "equation": "[Add equation]"
+        },
+        "molarity": {
+            "title": "Unit Conversor",
+            "description": "[Add description]",
+            "equation": "[Add equation]"
+        },
+        "temperature": {
+            "title": "Unit Conversor",
+            "description": "[Add description]",
+            "equation": "[Add equation]"
+        },
+        "time": {
+            "title": "Unit Conversor",
+            "description":" [Add description]",
+            "equation": "(F = 1.8 C + 32) e (K = C + 273.15)"
+        }
+    },
+    "solutions": {
+        "buffer": {
+            "title": "Buffer Solution",
+            "description": "[Add description]",
+            "equation": "pH = pKa + log [sal]/[ácido]"
+        },
+        "dilution": {
+            "title": "Dilutions",
+            "description":" [Add description]",
+            "equation": "C1 x V1 = C2 x V2"
+        }
+    }
+}

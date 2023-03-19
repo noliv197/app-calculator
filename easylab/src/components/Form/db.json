@@ -1,0 +1,103 @@
+{
+    "login":{
+        "inputs":[
+            {
+                "label": "Enter Username",
+                "placeholder": "Username",
+                "id": "loginUsername",
+                "type": "text",
+                "required": true  
+            },
+            {
+                "label": "Enter Password",
+                "placeholder": "Password",
+                "id": "loginPassword",
+                "type": "password",
+                "showEnabled": true,
+                "required": true
+            }
+        ],
+        "links":[
+            {
+                "text": "Not Register? Sign up now",
+                "href": "/user/register"
+            },
+            {
+                "text": "Forgot Password?",
+                "href": "/user/forgot-password"
+            }
+        ]
+    },
+    "register":{
+        "inputs":[
+            {
+                "label": "Enter your email",
+                "placeholder": "youremail@example.com",
+                "id": "registerEmail",
+                "type": "email",
+                "required": true  
+            },
+            {
+                "label": "Choose a username",
+                "placeholder": "Username",
+                "id": "registerUsername",
+                "type": "text",
+                "required": true  
+            },
+            {
+                "label": "Choose your password",
+                "placeholder": "Password",
+                "id": "registerPassword",
+                "type": "password",
+                "showEnabled": false,
+                "required": true
+            },
+            {
+                "label": "Confirm password",
+                "placeholder": "Confirm Password",
+                "id": "registerConfirm",
+                "type": "password",
+                "showEnabled": false,
+                "required": true
+            }
+        ],
+        "links":[
+            {
+                "text": "Already have an account? Click here to Sign In",
+                "href": "/user/login"
+            }
+        ]
+    },
+    "reset":{
+        "inputs":[
+            {
+                "label": "Choose new password",
+                "placeholder": "New Password",
+                "id": "resetPassword",
+                "type": "password",
+                "showEnabled": false,
+                "required": true  
+            },
+            {
+                "label": "Confirm password",
+                "placeholder": "Confirm new password",
+                "id": "confirmPassword",
+                "type": "password",
+                "showEnabled": false,
+                "required": true  
+            }
+        ]
+    },
+    "forgot":{
+        "inputs":[
+            {
+                "label": "Forgot your Password? Enter your email and we will send a link to set a new password",
+                "labelSmall": true,
+                "placeholder": "Write your email",
+                "id": "forgotEmail",
+                "type": "email",
+                "required": true  
+            }
+        ]
+    }
+}

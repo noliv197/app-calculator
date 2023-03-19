@@ -39,7 +39,7 @@ const Theme = {
             primary: "#5f9ea0", 
             secondary: "#9799A6",
             error: "#c32b2b",
-            valid: "#2fdd83"
+            valid: "#2db16d"
         },
         filter:{
             primary: "invert(38%) sepia(8%) saturate(197%) hue-rotate(191deg) brightness(97%) contrast(94%)"

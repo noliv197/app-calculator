@@ -4,9 +4,16 @@ import Form from '../components/Form'
 function ResetPassword() {
     return (
         <>
-            <Header/>
+            <Header
+                navList={["calculator"]}
+            />
             <main>
-                <Form/>
+                <Form
+                    type='reset' 
+                    button='Confirm' 
+                    h1='Reset Password'
+                    links={false}
+                />
             </main>
         </>
     );

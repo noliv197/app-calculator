@@ -1,0 +1,55 @@
+{
+    "buffer":[
+        {
+            "value": "pH",
+            "title": "Buffer's pH: ",
+            "placeholder": "",
+            "required": true,
+            "type": "number"
+        },
+        {
+            "value": "pKa",
+            "title": "Acid's pKa: ",
+            "placeholder": "",
+            "required": true,
+            "type": "number"
+        },
+        {
+            "value": "vol",
+            "title": "Final Volume: ",
+            "placeholder": "in Lites (L)",
+            "required": true,
+            "type": "number"
+        }
+    ],
+    "dilution":[
+        {
+            "value": "C1",
+            "title": "Initial Concentration: ",
+            "placeholder": "C1",
+            "required": false,
+            "type":"number"
+        },
+        {
+            "value": "C2",
+            "title": "Final Concentration: ",
+            "placeholder": "C2",
+            "required": false,
+            "type":"number"
+        },
+        {
+            "value": "V1",
+            "title": "Initial Volume: ",
+            "placeholder": "V1",
+            "required": false,
+            "type":"number"
+        },
+        {
+            "value": "V2",
+            "title": "Final Volume: ",
+            "placeholder": "V2",
+            "required": false,
+            "type":"number"
+        }
+    ]
+}

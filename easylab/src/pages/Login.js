@@ -4,9 +4,16 @@ import Form from '../components/Form'
 function Login() {
     return (
         <>
-            <Header/>
+            <Header
+                navList={["calculator"]}
+            />
             <main>
-                <Form/>
+                <Form 
+                    type='login' 
+                    button='Login' 
+                    h1='Login'
+                    links={true}
+                />
             </main>
         </>
     );

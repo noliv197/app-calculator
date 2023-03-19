@@ -38,7 +38,7 @@ html, body, div, span, applet, object, iframe,
         min-height: 100vh;
 	}
     main{
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 169px);
     }
 `
 
