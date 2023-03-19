@@ -53,3 +53,12 @@ class Dilution(Base):
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text("now()"))
     
+    def calculate_dilution(self):
+        if not self.c1:
+            self.c1 = (self.c2 * self.v2) / self.v1
+        elif not self.v1:
+            self.v1 = (self.c2 * self.v2) / self.c1
+        elif not self.c2:
+            self.c2 = (self.c1 * self.v1) / self.v2
+        elif not self.v2:
+            self.v2 = (self.c1 * self.v1) / self.c2

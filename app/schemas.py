@@ -77,4 +77,32 @@ class ConvertionResponse(ConvertionBaseSchema):
 class ListConvertionResponse(BaseModel):
     status: str
     results: int
-    activities: List[ConvertionResponse]
+    convertions: List[ConvertionResponse]
+
+
+class DilutionBaseSchema(BaseModel):
+    c1: float | None = None
+    v1: float | None = None
+    c2: float | None = None
+    v2: float | None = None
+    user_id: int | None = None
+
+    class Config:
+        orm_mode = True
+
+class CreateDilutionSchema(DilutionBaseSchema):
+    pass
+
+class DilutionResponse(DilutionBaseSchema):
+    id: int
+    user_id: int
+    c1: float
+    v1: float
+    c2: float
+    v2: float
+    created_at: datetime
+
+class ListDilutionResponse(BaseModel):
+    status: str
+    results: int
+    dilutions: List[DilutionResponse]
