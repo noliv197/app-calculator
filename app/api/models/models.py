@@ -41,3 +41,15 @@ class Convertion(Base):
         q_end = q.to(ureg.parse_expression(self.to))
         self.value = q_end.magnitude
         return self.value
+
+class Dilution(Base):
+    __tablename__ = 'dilutions'
+    id = Column(Integer, primary_key=True, nullable=False)
+    c1 = Column(Float, nullable=True)
+    v1 = Column(Float, nullable=True)
+    c2 = Column(Float, nullable=True)
+    v2 = Column(Float, nullable=True)
+    user_id = Column(ForeignKey("users.id"), nullable=False)
+    created_at = Column(TIMESTAMP(timezone=True),
+                        nullable=False, server_default=text("now()"))
+    
