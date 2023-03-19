@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.api.models.models import Base
 from app.api.database.database import get_db
-from app.api.routers import user, activity, convertion
+from app.api.routers import user, activity, convertion, dilution
 from app.utils import hash_password
 
 from pytest_postgresql import factories
@@ -30,6 +30,7 @@ def start_application():
     app.include_router(user.router, prefix = "/api/users")
     app.include_router(activity.router, prefix = "/api/activities")
     app.include_router(convertion.router, prefix = "/api/convertions")
+    app.include_router(dilution.router, prefix = "/api/dilutions")
     return app
 
 @pytest.fixture(scope="function")
