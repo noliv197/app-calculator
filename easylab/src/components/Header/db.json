@@ -1,0 +1,26 @@
+{
+    "login":{
+        "href": "/user/login",
+        "text": "Sign In"
+    },
+    "register":{
+        "href": "/user/register",
+        "text": "Sign Up"
+    },
+    "calculator":{
+        "href": "/calculator/conversor",
+        "text": "calculator"
+    },
+    "solutions":{
+        "href": "/calculator/solutions",
+        "text": "solutions"
+    },
+    "conversor":{
+        "href": "/calculator/conversor",
+        "text": "conversor"
+    },
+    "ata":{
+        "href": "/user/ata",
+        "text": "others"
+    }
+}

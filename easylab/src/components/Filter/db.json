@@ -1,0 +1,35 @@
+{
+    "solutions":[
+        {
+            "name": "buffer",
+            "id": 1
+        },
+        {
+            "name": "dilution",
+            "id": 2
+        }
+    ],
+    "conversor":[
+        {
+            "name": "volume",
+            "id": 1
+        },
+        {
+            "name": "mass",
+            "id": 2
+        },
+        {
+            "name": "molarity",
+            "id": 3
+        },
+        {
+            "name": "temperature",
+            "id": 4
+        },        
+        {
+            "name": "time",
+            "id": 5
+        }
+    ]
+
+}
