@@ -2,7 +2,7 @@
 FROM node:16.15.0 
 
 # set work directory
-WORKDIR /app/front
+WORKDIR /app/easylab
 
 # copy project
 COPY . .

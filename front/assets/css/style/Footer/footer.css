@@ -1,9 +1,0 @@
-footer{
-    background-color: var(--bkg-secondary);
-    padding: var(--sp-rg) 0;
-    text-align: center;
-}
-footer img{
-    margin: var(--sp-rg) 0;
-    width: 100px;
-}

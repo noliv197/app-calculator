@@ -1,0 +1,58 @@
+curl --request GET \
+  --url http://localhost:8000/api/users/refresh
+
+curl --request GET \
+  --url http://localhost:8000/api/users/me \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4IiwiaWF0IjoxNjc4NjMzNTc3LCJuYmYiOjE2Nzg2MzM1NzcsImp0aSI6IjRiYzBjNWY2LTkxOGEtNDllZC1iY2RlLTgwZDUzMDNiY2ZhZiIsImV4cCI6MTY3ODYzNDQ3NywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZSwiY3NyZiI6ImZmMDJkMDc3LWM2YWEtNDUyOS04ZWE0LTc1OTRlNDk1MjE0ZSJ9.YsFqxPHRFNiqkAX9h0Cy5R_J8iSVT0-nCYmDtxmZIBa3C7LxYzvXb8grd_hwjOp0Z3IIKiQFwqJMghyFPFPtlrsaXiDlY9d0U3gbf6UhUjWrL9ENZ8HDLpih7upRIn7-G8vTVnZ7n-3-YB_zWWsRYXPh0lHvyaw7uramEhmeq0M'
+
+curl --request GET \
+  --url 'http://localhost:8000/api/activities/?start_date=2023-02-25&end_date=2023-02-27' \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4IiwiaWF0IjoxNjc4NjMzNTc3LCJuYmYiOjE2Nzg2MzM1NzcsImp0aSI6IjRiYzBjNWY2LTkxOGEtNDllZC1iY2RlLTgwZDUzMDNiY2ZhZiIsImV4cCI6MTY3ODYzNDQ3NywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZSwiY3NyZiI6ImZmMDJkMDc3LWM2YWEtNDUyOS04ZWE0LTc1OTRlNDk1MjE0ZSJ9.YsFqxPHRFNiqkAX9h0Cy5R_J8iSVT0-nCYmDtxmZIBa3C7LxYzvXb8grd_hwjOp0Z3IIKiQFwqJMghyFPFPtlrsaXiDlY9d0U3gbf6UhUjWrL9ENZ8HDLpih7upRIn7-G8vTVnZ7n-3-YB_zWWsRYXPh0lHvyaw7uramEhmeq0M' \
+  --header 'Content-Type: application/json'
+
+curl --request POST \
+  --url http://localhost:8000/api/activities \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4IiwiaWF0IjoxNjc4NjMzNTc3LCJuYmYiOjE2Nzg2MzM1NzcsImp0aSI6IjRiYzBjNWY2LTkxOGEtNDllZC1iY2RlLTgwZDUzMDNiY2ZhZiIsImV4cCI6MTY3ODYzNDQ3NywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZSwiY3NyZiI6ImZmMDJkMDc3LWM2YWEtNDUyOS04ZWE0LTc1OTRlNDk1MjE0ZSJ9.YsFqxPHRFNiqkAX9h0Cy5R_J8iSVT0-nCYmDtxmZIBa3C7LxYzvXb8grd_hwjOp0Z3IIKiQFwqJMghyFPFPtlrsaXiDlY9d0U3gbf6UhUjWrL9ENZ8HDLpih7upRIn7-G8vTVnZ7n-3-YB_zWWsRYXPh0lHvyaw7uramEhmeq0M' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "title": "teste2",
+  "activity": "test2body",
+  "user_id": 1,
+  "created_at": "2023-02-26T12:01:00.651Z"
+}'
+
+curl --request POST \
+  --url http://localhost:8000/api/convertions \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4IiwiaWF0IjoxNjc4NjMzNTc3LCJuYmYiOjE2Nzg2MzM1NzcsImp0aSI6IjRiYzBjNWY2LTkxOGEtNDllZC1iY2RlLTgwZDUzMDNiY2ZhZiIsImV4cCI6MTY3ODYzNDQ3NywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZSwiY3NyZiI6ImZmMDJkMDc3LWM2YWEtNDUyOS04ZWE0LTc1OTRlNDk1MjE0ZSJ9.YsFqxPHRFNiqkAX9h0Cy5R_J8iSVT0-nCYmDtxmZIBa3C7LxYzvXb8grd_hwjOp0Z3IIKiQFwqJMghyFPFPtlrsaXiDlY9d0U3gbf6UhUjWrL9ENZ8HDLpih7upRIn7-G8vTVnZ7n-3-YB_zWWsRYXPh0lHvyaw7uramEhmeq0M' \
+  --header 'Content-Type: application/json' \
+  --data '{
+        "type":"mass",
+        "from_":"micrograms",
+        "to":"kg",
+        "value_from":23054
+       }
+'
+
+curl --request POST \
+  --url http://localhost:8000/api/users/login \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "email": "John@example.com",
+  "password": "secret_password"
+}
+
+'
+
+curl --request POST \
+  --url http://localhost:8000/api/users/register \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "name": "John",
+  "email": "John@example.com",
+  "password": "secret_password",
+  "passwordConfirm": "secret_password"
+}'
+
+curl --request DELETE \
+  --url http://localhost:8000/api/users/1 \
+  --header 'Content-Type: application/json'

@@ -3,8 +3,8 @@ import {IconButton} from '../../Button'
 import {AiFillEyeInvisible, AiFillEye} from 'react-icons/ai'
 
 function Input(props){
-    function getValue(){
-
+    function getValue(event){
+        props.state.set(event.target.value)
     }
     function validate(){
         
@@ -19,6 +19,7 @@ function Input(props){
                 id={props.id}
                 type={props.type} 
                 data-value={props.value}
+                value={props.state.state}
                 required={props.required}
                 placeholder={props.placeholder}
                 onChange={getValue}

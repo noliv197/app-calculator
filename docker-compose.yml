@@ -21,16 +21,16 @@ services:
       - ./.env
     volumes:
       - postgres-db:/var/lib/postgresql/data
-  front:
+  react:
     build: 
-      context: ./front
-      dockerfile: front.dockerfile
+      context: ./easylab
+      dockerfile: dockerfile.react
     command: npm run start
     depends_on:
       - web
     volumes:
-      - .:/front 
+      - .:/easylab 
     ports:
-      - 8080:8080
+      - 3000:3000
 volumes:
   postgres-db:
