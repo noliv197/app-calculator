@@ -12,7 +12,8 @@
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.9",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "nodemon": "^2.0.15"
   },
   "scripts": {
     "start": "nodemon -L --exec react-scripts start",
@@ -37,9 +38,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
   }
 }
 
