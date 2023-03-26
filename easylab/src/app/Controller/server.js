@@ -43,7 +43,6 @@ export class UserServer extends Server{
     }
     async loginRequest(username,password){
         try{
-            console.log(username,password)
             const connection = await fetch(this.url,{
                 method: "POST",
                 headers: {
@@ -61,7 +60,6 @@ export class UserServer extends Server{
         }
     }
     async registerRequest(username,email,password,confirm){
-        console.log(username,email,password)
         try{
             const connection = await fetch(this.urlRegister,{
                 method: "POST",
