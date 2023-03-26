@@ -30,6 +30,7 @@ services:
       - web
     volumes:
       - ./easylab:/app/easylab
+      - /app/easylab/node_modules
     ports:
       - 3000:3000
 volumes:
