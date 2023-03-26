@@ -29,7 +29,7 @@ services:
     depends_on:
       - web
     volumes:
-      - .:/easylab 
+      - ./easylab:/app/easylab
     ports:
       - 3000:3000
 volumes:

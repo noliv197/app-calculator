@@ -4,11 +4,14 @@ FROM node:16.15.0
 # set work directory
 WORKDIR /app/easylab
 
-# copy project
-COPY . .
+COPY package.json .
+COPY package-lock.json .
 
 # install dependencies
 RUN npm install
 
 RUN useradd -u 1001 calculator
 USER calculator
+
+# copy project
+COPY . .
