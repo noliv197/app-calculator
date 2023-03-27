@@ -109,21 +109,4 @@ export class ContentServer extends Server {
         const convertedConnection = await connection.json()
         return convertedConnection
     }
-
-    async updateRequest(id,title,date,content,tags){
-        const connection = await fetch(`${this.url}/${id}`,{
-            method: "PUT",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify({
-                title: title,
-                date: date,
-                content: content,
-                tags: tags
-            })
-        })
-        const convertedConnection = await connection.json()
-        return convertedConnection
-    }
 }
