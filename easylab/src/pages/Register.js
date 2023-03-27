@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Form from '../components/Form'
+import RegisterForm from '../components/Form/register'
 import { useState } from 'react'
 
 function Register() {
@@ -31,13 +32,14 @@ function Register() {
                 navList={["calculator"]}
             />
             <main>
-                <Form
+                {/* <Form
                     type='register' 
                     button='Register' 
                     h1='Register'
                     stateList={stateList}
                     links={true}
-                />
+                /> */}
+                <RegisterForm/>
             </main>
         </>
     );

@@ -32,7 +32,13 @@ const FieldsetStyle = styled.fieldset`
         border-color: ${props => props.theme.color.border.valid};
     }
     input.invalid{
-        border-color: ${props => props.theme.color.border.invalid};
+        border-color: ${props => props.theme.color.border.error};
+    }
+    p.invisible{
+        display:none;
+    }
+    p.visible{
+        display:block;
     }
 `
 

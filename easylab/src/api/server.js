@@ -31,19 +31,8 @@ export class UserServer extends Server{
         this.url = 'http://localhost:8000/api/users/login'
         this.urlRegister = 'http://localhost:8000/api/users/register'
     }   
-    async loginUsers(){
-        const connection = await fetch(this.url)
-        const convertedConnection = await connection.json()
-        return convertedConnection
-    }
-    async registerUsers(){
-        const connection = await fetch(this.urlRegister)
-        const convertedConnection = await connection.json()
-        return convertedConnection
-    }
     async loginRequest(username,password){
         try{
-            console.log(username,password)
             const connection = await fetch(this.url,{
                 method: "POST",
                 headers: {
@@ -61,7 +50,7 @@ export class UserServer extends Server{
         }
     }
     async registerRequest(username,email,password,confirm){
-        console.log(username,email,password)
+        console.log(username,email,password,confirm)
         try{
             const connection = await fetch(this.urlRegister,{
                 method: "POST",

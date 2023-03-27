@@ -3,28 +3,32 @@ import FormStyle from "./style";
 import Button from "../Button";
 import data from "./db.json"
 import inputs from "./program.json"
-import Submission from "../../app/Controller/submission";
+import { UserServer } from "../../api/server";
 
 function Form(props){
     const formsData = data[props.type]
-    const submit = new Submission()
+    const server = new UserServer()
     let states = []
-    function sendRequest(event){
+    async function sendRequest(event){
         event.preventDefault()
-        switch(props.type){
-            case "login":
-                submit.login(...states)
-                break
-            case "register":
-                submit.register(...states)
-                break
-            case "reset":
-                submit.reset(...states)
-                break
-            case "forgot":
-                submit.toEmail(...states)
-                break
-            default: 
+        try{
+            switch(props.type){
+                case "login":
+                    await server.loginRequest(...states)
+                    break
+                case "register":
+                    await server.registerRequest(...states)
+                    break
+                case "reset":
+                    await server.updateRequest(...states)
+                    break
+                case "forgot":
+                    await server.updateRequest(...states)
+                    break
+                default: 
+            }
+        }catch(err){
+            console.log(err)
         }
     }
     return(
