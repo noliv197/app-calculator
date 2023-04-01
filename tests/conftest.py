@@ -77,10 +77,10 @@ def app(db_session):
     #Base.metadata.drop_all(db_session.bind)
 
 @pytest.fixture(scope="function")
-def user_created(db_session: Session):
+def user_created(register_payload, db_session: Session):
     insert = db_session.execute(text(f'''INSERT INTO public.users
                         ("name", email, "password", created_at, updated_at)
-                        VALUES('John', 'john@mail.com', '{hash_password('secret_password')}', now(), now()) RETURNING id;'''))
+                        VALUES('{register_payload['name']}', '{register_payload['email']}', '{hash_password(register_payload['password'])}', now(), now()) RETURNING id;'''))
     user_id = insert.fetchone()[0]
     yield user_id
 
