@@ -13,6 +13,9 @@ class User(Base):
                         nullable=False, server_default=text("now()"))
     updated_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text("now()"))
+    
+    def change_password(self,new_password):
+        self.password = new_password
 
 class Activity(Base):
     __tablename__ = 'activities'

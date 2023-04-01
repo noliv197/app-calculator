@@ -23,6 +23,38 @@ def create_user(payload: schemas.CreateUserSchema, db: Session = Depends(get_db)
     new_user = create_new_user(payload=payload,db=db)
     return new_user
 
+@router.put('/{user_id}/change-password')
+async def change_password(payload: schemas.ChangePasswordRequest, user_id: int, request: Request, db: Session = Depends(get_db), Authorize: AuthJWT = Depends()):
+    # Ensure user is authenticated
+    Authorize.jwt_required()
+
+    # Get current user's ID from JWT token
+    current_user_id = int(Authorize.get_jwt_subject())
+
+    # Ensure current user is the same as the user ID in the URL
+    if current_user_id != user_id:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
+                            detail='Unauthorized user')
+
+    # Get user from database
+    user = find_user_by_id(user_id, db)
+
+    # Check if the user exists
+    if not user:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail='User not found')
+
+    # Check if the old password is correct
+    if not utils.verify_password(payload.current_password, user.password):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
+                            detail='Incorrect credentials')
+
+    # Update user's password
+    user.change_password(utils.hash_password(payload.new_password))
+    db.commit()
+
+    return {'status': 'success'}
+
 
 @router.post('/login')
 def login(payload: schemas.LoginUserSchema, response: Response, db: Session = Depends(get_db), Authorize: AuthJWT = Depends()):
