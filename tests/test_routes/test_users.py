@@ -32,6 +32,27 @@ def test_login(client, register_payload, user_created, db_session):
     response = client.get("/api/users/me")
     assert response.status_code == 200
 
+def test_change_password(client, register_payload, user_created, db_session, normal_user_token_headers):
+    change_password_payload = {
+        "email": register_payload['email'],
+        "current_password": register_payload['password'],
+        "new_password": 'new_secret_password'
+    }
+    response = client.put(f"/api/users/{user_created}/change-password", json=change_password_payload, headers=normal_user_token_headers)
+    assert response.status_code == 200
+    change_password_payload = {
+        "email": register_payload['email'],
+        "current_password": register_payload['password'],
+        "new_password": 'new_secret_password'
+    }
+    response = client.put(f"/api/users/{user_created}/change-password", json=change_password_payload, headers=normal_user_token_headers)
+    assert response.status_code == 401
+    assert response.json()['detail'] == 'Incorrect credentials'
+
+    response = client.put(f"/api/users/42/change-password", json=change_password_payload, headers=normal_user_token_headers)
+    assert response.status_code == 401
+    assert response.json()['detail'] == 'Unauthorized user'
+
 def test_delete(client ,db_session, user_created, register_payload):
     stmt = select(User).where(User.name == "John")
     user_id = db_session.execute(stmt).first()[0].id
