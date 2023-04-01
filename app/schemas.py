@@ -20,6 +20,17 @@ class LoginUserSchema(BaseModel):
     email: EmailStr
     password: constr(min_length=8)
 
+class ChangePasswordRequest(BaseModel):
+    email: EmailStr
+    current_password: constr(min_length=8)
+    new_password: constr(min_length=8)
+
+class ChangePasswordResponse(BaseModel):
+    email:EmailStr
+    current_password:str
+class LoginUserSchema(BaseModel):
+    email: EmailStr
+    password: constr(min_length=8)
 
 class UserResponse(UserBaseSchema):
     id: int
