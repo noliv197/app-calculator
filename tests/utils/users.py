@@ -23,7 +23,7 @@ def authentication_token_from_email(client: TestClient, email: str, db: Session)
     Return a valid token for the user with given email.
     If the user doesn't exist it is created first.
     """
-    password = "random-passW0rd"
+    password = "secret_password"
     user = find_user_by_email(email=email, db=db)
     if not user:
         user_in_creation = CreateUserSchema(name=email, email=email, password=password, passwordConfirm=password)

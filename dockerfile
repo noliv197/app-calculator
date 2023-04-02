@@ -17,8 +17,11 @@ RUN apt update && apt install libpq-dev python3-dev postgresql postgresql-contri
 
 RUN pip install -r requirements.txt
 
-RUN useradd -u 1001 calculator
-USER calculator
+RUN useradd -u 1000 calculator
 
 # copy project
 COPY . .
+
+RUN rm -rf easylab
+
+USER calculator
