@@ -67,7 +67,7 @@ export class UserServer extends Server{
             const convertedConnection = await connection.json()
             return convertedConnection
         }catch(err){
-            console.log(err)
+            return err
         }
     }
 

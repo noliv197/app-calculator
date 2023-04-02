@@ -39,14 +39,16 @@ function Form(props){
                     states.push(props.stateList[data.id].name)
                    return(
                        <Input
-                           key={data.id}
-                           id={data.id}
-                           state={props.stateList[data.id]}
-                           type={data.type}
-                           placeholder={data.placeholder}
-                           label={data.label}
-                           required={data.required}
-                           labelSmall={data.labelSmall? true : false}
+                            key={data.id}
+                            label={data.label}
+                            labelSmall={data.labelSmall? true : false}
+                            type={data.type}
+                            id={data.id}
+                            setState={props.stateList[data.id]}
+                            setFocus={{state: '', set: ''}}
+                            aria={{invalid: '', describe: 'uidnote'}}
+                            placeholder={data.placeholder}
+                            required={data.required}
                        />
                    ) 
                 }

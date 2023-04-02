@@ -14,7 +14,7 @@ export function IconButton(props){
             type={props.type}
             title={props.title}
             className={props.class}
-            disabled={props.disabled? props.disabled: 'false'}
+            disabled={props.disabled? props.disabled: false}
         >{props.children}</IconButtonStyle>
     )
 }

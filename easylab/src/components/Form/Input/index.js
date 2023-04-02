@@ -18,16 +18,17 @@ function Input(props){
                 value={props.setState.state}
                 required={props.required}
                 placeholder={props.placeholder}
-                aria-invalid={props.aria.invalid ? "false": "true"}
-                aria-describedby={props.aria.describe}
                 onChange={(e)=> props.setState.set(e.target.value)}
-                onFocus={()=> props.setFocus.set(true)}
-                onBlur={()=> props.setFocus.set(false)}
+                aria-invalid={props.aria.invalid ? "false": "true"}
+                aria-describedby={props.aria.invalid? props.aria.describe: null}
+                onFocus={props.setFocus.state? ()=> props.setFocus.set(true) : null}
+                onBlur={props.setFocus.state? ()=> props.setFocus.set(false) : null}
                 className={
                     props.aria.invalid &&  props.setState.state? "valid" : 
                     props.setState.state? 'invalid' : ''}
             ></input>
             { 
+                props.setFocus.state? null :
                 props.id === 'email' ? 
                     <p id={props.aria.describe} className={props.setFocus.state && props.setState.state && !props.aria.invalid  ? "visible" : "invisible"}>
                         Must contain a <span aria-label="at symbol">@</span> 

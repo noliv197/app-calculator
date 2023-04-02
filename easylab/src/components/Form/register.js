@@ -59,15 +59,14 @@ function RegisterForm(){
         try{
             await axios.post(REGISTER_URL,
                 {
-                    headers: { "Content-type": "application/json"},
-                    withCredentials: true
-                },
-                    JSON.stringify({
                     name: username,
                     email: email,
                     password: password,
                     passwordConfirm: confirm
-                })
+                },
+                {
+                    headers: { "Content-type": "application/json"},
+                }
             )
         }
         catch(err){
@@ -138,7 +137,7 @@ function RegisterForm(){
                 />
                 <Button 
                     type='submit'
-                    disable={!validUsername || !validEmail || !validPwd || !validConfirm? "true" : "false"}
+                    disable={!validUsername || !validEmail || !validPwd || !validConfirm? true : false}
                 >Salvar</Button>
             </form>
         </FormStyle>
