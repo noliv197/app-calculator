@@ -1,5 +1,5 @@
 import Header from '../components/Header'
-import Form from '../components/Form'
+import LoginForm from '../components/Form/login';
 
 function Login() {
     return (
@@ -8,12 +8,7 @@ function Login() {
                 navList={["calculator"]}
             />
             <main>
-                <Form 
-                    type='login' 
-                    button='Login' 
-                    h1='Login'
-                    links={true}
-                />
+                <LoginForm/>
             </main>
         </>
     );

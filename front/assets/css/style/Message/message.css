@@ -1,6 +1,0 @@
-.message--error{
-    color: var(--border-error);
-    font-size: var(--size-sm);
-    padding-left: var(--sp-xs);
-    height: 15px;
-}
