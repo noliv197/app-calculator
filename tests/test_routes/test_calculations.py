@@ -25,6 +25,5 @@ def test_get_calculations(client, normal_user_token_headers, convertion_created)
     start_date = "2023-01-01"
     end_date = "2023-12-30"
     response = client.get(f"/api/convertions?start_date={start_date}&end_date={end_date}",headers=normal_user_token_headers)
-    print(response.json()["results"])
     assert response.status_code == 200
     assert response.json()["results"] == 1
