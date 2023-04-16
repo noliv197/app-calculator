@@ -12,6 +12,7 @@ router = APIRouter()
 @router.post('/', status_code=status.HTTP_201_CREATED, response_model=schemas.ActivityResponse)
 def create_activity(activity: schemas.CreateActivitySchema, db: Session = Depends(get_db), owner_id: str = Depends(require_user)):
     activity.user_id = owner_id
+    # TODO: Fazer o created_at da hora que fez a atividade for now its is the time of insertion
     new_activity = models.Activity(**activity.dict())
     db.add(new_activity)
     db.commit()

@@ -1,4 +1,4 @@
-def test_create_convertion(client, normal_user_token_headers):
+def test_create_calculation(client, normal_user_token_headers):
     test_cases = [
        {
         'type':'mass',
@@ -20,3 +20,11 @@ def test_create_convertion(client, normal_user_token_headers):
         response = client.post(f"/api/convertions",headers=normal_user_token_headers, json=test_case)
         assert response.status_code == 201
         assert response.json()['value'] == value
+
+def test_get_calculations(client, normal_user_token_headers, convertion_created):
+    start_date = "2023-01-01"
+    end_date = "2023-12-30"
+    response = client.get(f"/api/convertions?start_date={start_date}&end_date={end_date}",headers=normal_user_token_headers)
+    print(response.json()["results"])
+    assert response.status_code == 200
+    assert response.json()["results"] == 1
