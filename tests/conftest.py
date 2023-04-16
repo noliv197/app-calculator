@@ -107,3 +107,12 @@ def activity_created(db_session):
                                     VALUES(1, 'test activity', 'this is a test activity \n by john', '2023-11-30') RETURNING id;'''))
     activity_id = insert.fetchone()[0]
     yield activity_id
+
+@pytest.fixture(scope="function")
+def convertion_created(db_session):
+    insert = db_session.execute(text(f'''INSERT INTO public.convertions
+                                    ("type", from_, "to", value, value_from, user_id, created_at)
+                                    VALUES('Volume', 'l', 'ml', 1000, 1, 1, '2023-11-30')
+                                    RETURNING id;'''))
+    activity_id = insert.fetchone()[0]
+    yield activity_id
