@@ -114,5 +114,14 @@ def convertion_created(db_session):
                                     ("type", from_, "to", value, value_from, user_id, created_at)
                                     VALUES('Volume', 'l', 'ml', 1000, 1, 1, '2023-11-30')
                                     RETURNING id;'''))
-    activity_id = insert.fetchone()[0]
-    yield activity_id
+    convertion_id = insert.fetchone()[0]
+    yield convertion_id
+
+@pytest.fixture(scope="function")
+def dilution_created(db_session):
+    insert = db_session.execute(text(f'''INSERT INTO public.dilutions
+                                    (c1, v1, c2, v2, user_id, created_at)
+                                    VALUES(2, 4, 1, 8, 1, '2023-11-30')
+                                    RETURNING id;'''))
+    dilution_id = insert.fetchone()[0]
+    yield dilution_id
