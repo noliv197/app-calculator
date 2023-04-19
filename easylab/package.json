@@ -15,7 +15,7 @@
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.22"
   },
   "scripts": {
     "start": "nodemon -L --exec react-scripts start",
@@ -43,4 +43,3 @@
     ]
   }
 }
-
