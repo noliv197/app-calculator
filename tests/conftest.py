@@ -74,7 +74,6 @@ def app(db_session):
     Base.metadata.create_all(db_session.bind)  # Create the tables.
     _app = start_application()
     yield _app
-    #Base.metadata.drop_all(db_session.bind)
 
 @pytest.fixture(scope="function")
 def user_created(register_payload, db_session: Session):

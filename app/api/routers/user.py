@@ -133,6 +133,7 @@ def get_me(db: Session = Depends(get_db), user_id: str = Depends(oauth2.require_
     user = find_user_by_id(user_id, db)
     return user
 
+# TODO: add auth for this route
 @router.delete("/{user_id}")
 async def del_user(user_id: int, db: Session = Depends(get_db)):
     user = find_user_by_id(user_id, db)
