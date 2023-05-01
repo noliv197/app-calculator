@@ -79,8 +79,8 @@ def app(db_session):
 @pytest.fixture(scope="function")
 def user_created(register_payload, db_session: Session):
     insert = db_session.execute(text(f'''INSERT INTO public.users
-                        ("name", email, "password", created_at, updated_at)
-                        VALUES('{register_payload['name']}', '{register_payload['email']}', '{hash_password(register_payload['password'])}', now(), now()) RETURNING id;'''))
+                        ("name", email, "password", created_at, updated_at, reset_words)
+                        VALUES('{register_payload['name']}', '{register_payload['email']}', '{hash_password(register_payload['password'])}', now(), now(), 'a, b ,c') RETURNING id;'''))
     user_id = insert.fetchone()[0]
     yield user_id
 
