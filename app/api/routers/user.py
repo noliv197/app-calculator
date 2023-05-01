@@ -140,3 +140,18 @@ async def del_user(user_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     delete_user(user, db=db)
     return {"message": f"User {user_id} deleted"}
+
+@router.post("/reset-password", response_model=schemas.ResetPasswordResponse )
+async def reset_password(payload: schemas.ResetPasswordRequest, db: Session = Depends(get_db)):
+    user = find_user_by_email(payload.email, db)
+    if not set(payload.reset_words) == set(user.reset_words.split(', ')):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
+                            detail='Incorrect reset words')
+    if not user:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail='User not found')
+
+    new_password = utils.generate_password()
+    user.change_password(utils.hash_password(new_password))
+    db.commit()
+    return {"message": f"Password reset successfully! Your new password is {new_password}"}
