@@ -4,6 +4,7 @@ from app.api.models import models
 from pydantic import EmailStr
 from sqlalchemy.orm import Session
 from fastapi import APIRouter, Request, Response, status, Depends, HTTPException
+from app.utils import generate_recovery_words
 
 def create_new_user(payload: schemas.CreateUserSchema, db: Session = get_db):
     # Check if user already exist
@@ -20,7 +21,9 @@ def create_new_user(payload: schemas.CreateUserSchema, db: Session = get_db):
     payload.password = utils.hash_password(payload.password)
     del payload.passwordConfirm
     payload.email = EmailStr(payload.email.lower())
-    new_user = models.User(**payload.dict())
+    payload_dict = payload.dict()
+    payload_dict['reset_words'] = generate_recovery_words()
+    new_user = models.User(**payload_dict)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
@@ -28,7 +31,7 @@ def create_new_user(payload: schemas.CreateUserSchema, db: Session = get_db):
 
 def find_user_by_email(email, db: Session = get_db):
     user = db.query(models.User).filter(
-        models.User.email == EmailStr(email)).first()
+        models.User.email.ilike(email)).first()
     return user
 
 def find_user_by_id(id, db: Session = get_db):

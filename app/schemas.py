@@ -10,11 +10,9 @@ class UserBaseSchema(BaseModel):
     class Config:
         orm_mode = True
 
-
 class CreateUserSchema(UserBaseSchema):
     password: constr(min_length=8)
     passwordConfirm: str
-
 
 class LoginUserSchema(BaseModel):
     email: EmailStr
@@ -25,22 +23,29 @@ class ChangePasswordRequest(BaseModel):
     current_password: constr(min_length=8)
     new_password: constr(min_length=8)
 
+class ResetPasswordRequest(BaseModel):
+    email: EmailStr
+    reset_words: List[str]
+
+class ResetPasswordResponse(BaseModel):
+    message: str
+
 class ChangePasswordResponse(BaseModel):
     email:EmailStr
     current_password:str
+
 class LoginUserSchema(BaseModel):
     email: EmailStr
     password: constr(min_length=8)
 
 class UserResponse(UserBaseSchema):
     id: int
+    reset_words: str
     created_at: datetime
     updated_at: datetime
 
-
 class FilteredUserResponse(UserBaseSchema):
     id: int
-
 
 class ActivityBaseSchema(BaseModel):
     title: str
@@ -51,10 +56,8 @@ class ActivityBaseSchema(BaseModel):
     class Config:
         orm_mode = True
 
-
 class CreateActivitySchema(ActivityBaseSchema):
     pass
-
 
 class ActivityResponse(ActivityBaseSchema):
     id: int
