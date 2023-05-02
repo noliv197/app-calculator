@@ -1,13 +1,16 @@
-import {useState, useRef, useEffect, useContext} from 'react'
-import AuthContext from '../../context/AuthProvider'
-import axios from '../../api/axios'
-import Button from '../Button'
-import Input from './Input'
-import FormStyle from './style'
+import {useState, useRef, useEffect, useContext} from 'react';
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import AuthContext from '../../context/AuthProvider';
+import axios from '../../api/axios';
+import Button from '../Button';
+import Input from './Input';
+import FormStyle from './style';
 
 const LOGIN_URL = "/login"
 
 function LoginForm(){
+    const navigate = useNavigate()
     const { setAuth } = useContext(AuthContext)
     const initRef = useRef()
     const errRef = useRef()
@@ -41,6 +44,7 @@ function LoginForm(){
             setAuth({email, password, accessToken})
             setEmail('')
             setPassword('')
+            navigate('/calculator/conversor')
         }
         catch(err){
             if(!err?.response){
@@ -57,8 +61,9 @@ function LoginForm(){
     }
     return(
         <FormStyle>
-            <p ref={errRef} className={errorMessage? "visible": "invisible"}
-            aria-live="assertive">{errorMessage}</p>
+            <p  ref={errRef} className={errorMessage? "visible": "invisible"}
+                aria-live="assertive"
+            >{errorMessage}</p>
             <h1>Login</h1>
             <form onSubmit={submit}>
                 <Input
@@ -91,8 +96,8 @@ function LoginForm(){
                 >Login</Button>
             </form>
             <nav>
-                <a href='/user/register'>Not Register? Sign up now</a>
-                <a href='/user/forgot-password'>Forgot Password?</a>
+                <Link to={'/user/register'}>Not Register? Sign up now</Link>
+                <Link to={'/user/forgot-password'}>Forgot Password?</Link>
             </nav> 
         </FormStyle>
     )

@@ -84,8 +84,9 @@ function RegisterForm(){
     }
     return(
         <FormStyle>
-            <p ref={errRef} className={errorMessage? "visible": "invisible"}
-            aria-live="assertive">{errorMessage}</p>
+            <p  ref={errRef} className={errorMessage? "visible": "invisible"}
+                aria-live="assertive"
+            >{errorMessage}</p>
             <h1>Register</h1>
             <form onSubmit={submit}>
                 <Input

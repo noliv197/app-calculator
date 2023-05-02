@@ -22,10 +22,10 @@ function Soulutions() {
                     type='solutions'
                     filter={filter}
                 />
-                <FormProgram
+                {/* <FormProgram
                     filter={filter}
                     button='Calculate'
-                />
+                /> */}
             </main>
         </>
     );

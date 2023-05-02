@@ -12,7 +12,6 @@ const HeaderStyle = styled.header`
         weight: 125px;
         height: 50px;
     }
-
     nav{
         display: flex;
         align-items: center;
