@@ -1,20 +1,33 @@
 import HeaderStyle from "./style";
-import links from "./db.json"
+import links from "./db.json";
+import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from 'react';
+import AuthContext from '../../context/AuthProvider';
+import Logout from "../Form/Logout";
 
 function Header(props){
+    const user = useContext(AuthContext)
+    const [isLogged,setIsUserLogged] = useState(false)
+    useEffect(()=>{
+        setIsUserLogged(Object.keys(user.auth).length !== 0)
+    },[user])
     return(
         <HeaderStyle>
             <nav className="first-nav">
-                <a href="/"><img src="/img/logo.png" alt="Easylab Logo"/></a>
-                <a href="/user/login">Sign In</a>
+                <Link to={"/"}><img src="/img/logo.png" alt="Easylab Logo"/></Link>
+                
+                { isLogged ? 
+                    <Logout/> :
+                    <Link to={"/user/login"}>Sign In</Link>
+                }
             </nav>
             <nav className="second-nav">
                 {props.navList.map((element,index) =>{
                     return(
-                        <a 
-                            href={links[element].href} 
+                        <Link
                             key={index}
-                        >{links[element].text}</a>
+                            to={links[element].href}
+                        >{links[element].text}</Link>
                     )
                 })}
             </nav>

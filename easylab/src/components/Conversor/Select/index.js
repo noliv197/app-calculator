@@ -1,8 +1,11 @@
 import SelectStyle from './style'
 
 function Select(props){
+    function changeValue(event){
+        props.setValue(event.target.value)
+    }
     return(
-        <SelectStyle>
+        <SelectStyle value={props.value} onChange={changeValue}>
             {
                 props.units.map(unit => (
                     <option 

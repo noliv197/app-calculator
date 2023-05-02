@@ -2,39 +2,39 @@
     "volume" : [
         {
             "value": "ul",
-            "label": "Microlitro (μL)",
+            "label": "Microliter (μL)",
             "selected": ""
         },
         {
             "value": "ml",
-            "label": "Mililitro (mL)",
+            "label": "Mililiter (mL)",
             "selected": ""
         },
         {
             "value": "l",
-            "label": "Litro (L)",
+            "label": "Liter (L)",
             "selected": ""
         }
     ],
     "mass" : [
         {
             "value": "ug",
-            "label": "Micrograma (μg)",
+            "label": "Microgram (μg)",
             "selected": ""
         },
         {
             "value": "mg",
-            "label": "Miligrama (mg)",
+            "label": "Milligram (mg)",
             "selected": ""
         },
         {
             "value": "g",
-            "label": "Grama (g)",
+            "label": "Gram (g)",
             "selected": ""
         },
         {
             "value": "kg",
-            "label": "Kilograma (kg)",
+            "label": "Kilogram (kg)",
             "selected": ""
         }
     ],
@@ -46,7 +46,7 @@
         },
         {
             "value": "mmol",
-            "label": "Milimol (mmol)",
+            "label": "Millimol (mmol)",
             "selected": ""
         },
         {
@@ -57,12 +57,12 @@
     ],
     "temperature": [
         {
-            "value": "c",
+            "value": "degree_Celsius",
             "label": "Celsius (°C)",
             "selected": ""
         },
         {
-            "value": "f",
+            "value": "degree_Fahrenheit",
             "label": "Fahrenheit (°F)",
             "selected": ""
         },
@@ -74,22 +74,22 @@
     ],
     "time": [
         {
-            "value": "us",
+            "value": "usec",
             "label": "Microseconds (μs)",
             "selected": ""
         },
         {
-            "value": "ms",
+            "value": "msec",
             "label": "Miliseconds (ms)",
             "selected": ""
         },
         {
-            "value": "s",
+            "value": "sec",
             "label": "Seconds (s)",
             "selected": ""
         },
         {
-            "value": "m",
+            "value": "minute",
             "label": "Minutes (m)",
             "selected": ""
         } 
